@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="imagens/man-5463556_640.png">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Gu-Barber</title>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="imagens/logo.png" alt="Nosso logo" title="Logo Oficial">
+        <div class="brand-text">
+          <span>Gu-Barber</span>
+          <small>Barbearia</small>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="contatos.html">Contatos</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="content-area">
+      <header class="topbar">
+        <div class="page-title">
+          <h1>Gu-Barber Shop</h1>
+          <p>Atendimento especializado, ambiente acolhedor e serviços de barbearia feitos com cuidado.</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-button sidebar-toggle" type="button" aria-label="Abrir ou fechar menu">☰</button>
+          <button class="icon-button theme-toggle" type="button" aria-label="Alternar tema">☀️</button>
+        </div>
+      </header>
+      <main class="page-main">
+        <section class="hero-card">
+          <div class="hero-copy">
+            <span class="eyebrow">Sobre nós</span>
+            <h2 class="titulo-principal">Um pouco sobre Gu-Barber shop</h2>
+            <p>Localizada no bairro Hípica, a <strong>Gu-Barber</strong> acabou de ser inaugurada com preço acessível e excelente atendimento.</p>
+            <p id="nossoobjetivo"><em>Nossos barbeiros têm <strong>experiência</strong> e garantem que você saia sempre satisfeito. Nosso objetivo é realçar o estilo dos clientes.</em></p>
+          </div>
+          <img class="banner-card" src="imagens/banner.jpg" alt="Nosso banner inicial" title="abertura barbearia">
+        </section>
+        <section class="card">
+          <div class="texto-wrapper">
+            <img class="utensilios" src="imagens/utensilios.jpg" alt="Utensilios de um barbeiro">
+            <div class="texto">
+              <p>Atendemos com horário marcado para sua segurança e conforto. Use máscara e aproveite um ambiente climatizado.</p>
+              <p>O local é decorado com estilo rústico e oferece wi-fi, música e sinuca para você relaxar enquanto espera.</p>
+              <p>Também vendemos lanches e bebidas, garantindo um atendimento completo.</p>
+            </div>
+          </div>
+        </section>
+        <section class="card">
+          <div class="card-header">
+            <h2 class="titulo-principal">Nosso estabelecimento</h2>
+            <p>Nossa barbearia está localizada na Zona Sul de Porto Alegre - RS.</p>
+          </div>
+          <div class="mapa-conteudo">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13801.933854948991!2d-51.208800672506314!3d-30.13759080241314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95198359d21ec215%3A0x896f4908b9b5a684!2sCampo%20Novo%2C%20Porto%20Alegre%20-%20RS!5e0!3m2!1spt-BR!2sbr!4v1638472772413!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </section>
+        <section class="card benefícios-card">
+          <h2 class="titulo-principal">Benefícios</h2>
+          <div class="conteudo-benefícios">
+            <ul class="lista-beneficios">
+              <li class="itens">Ótimo atendimento ao cliente</li>
+              <li class="itens">Ambiente climatizado e aconchegante</li>
+              <li class="itens">Venda de lanches e bebidas</li>
+              <li class="itens">Música, sinuca e wi-fi liberado</li>
+            </ul>
+            <img src="imagens/beneficios.jpg" class="imgbeneficio" alt="imagem dos benefícios" title="foto em atividade">
+          </div>
+          <div class="video">
+            <iframe src="https://www.youtube.com/embed/hJMj-a-Jdcs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <img src="imagens/logo_branco.png" alt="Logo branco Gu-Barber">
+        <p class="copy">&copy; copyright Gu-Barber Shop - 2026</p>
+      </footer>
+    </div>
+  </div>
+  <script>
+    const body = document.body;
+    const sidebarToggle = document.querySelector('.sidebar-toggle');
+    const themeToggle = document.querySelector('.theme-toggle');
+    const updateTheme = () => {
+      if (body.classList.contains('light')) {
+        themeToggle.textContent = '🌙';
+        themeToggle.title = 'Alternar para tema escuro';
+      } else {
+        themeToggle.textContent = '☀️';
+        themeToggle.title = 'Alternar para tema claro';
+      }
+    };
+    sidebarToggle?.addEventListener('click', () => body.classList.toggle('sidebar-collapsed'));
+    themeToggle?.addEventListener('click', () => {
+      body.classList.toggle('light');
+      updateTheme();
+    });
+    updateTheme();
+  </script>
+</body>
+</html>

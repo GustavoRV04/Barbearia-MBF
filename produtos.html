@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Gu-Barber Produtos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="imagens/man-5463556_640.png" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="imagens/logo.png" alt="Nosso logo" title="Logo Oficial">
+        <div class="brand-text">
+          <span>Gu-Barber</span>
+          <small>Barbearia</small>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="active"><a href="produtos.html">Produtos</a></li>
+          <li><a href="contatos.html">Contatos</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="content-area">
+      <header class="topbar">
+        <div class="page-title">
+          <h1>Produtos</h1>
+          <p>Escolha entre nossas opções de corte, barba e serviços completos com acabamento premium.</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-button sidebar-toggle" type="button" aria-label="Abrir ou fechar menu">☰</button>
+          <button class="icon-button theme-toggle" type="button" aria-label="Alternar tema">☀️</button>
+        </div>
+      </header>
+
+      <main class="page-main">
+        <section class="page-intro card">
+          <p>Atendemos com foco em estilo, conforto e cuidado. Confira nossos pacotes de serviço abaixo.</p>
+        </section>
+
+        <ul class="produtos">
+          <li>
+            <h2>Cabelo</h2>
+            <img src="imagens/cabelo.jpg" alt="Cabelo">
+            <p class="produto-descricao">Corte de cabelo com máquina ou tesoura, acabamento moderno e suave.</p>
+            <p class="produto-preco">R$ 25,00</p>
+          </li>
+          <li>
+            <h2>Barba</h2>
+            <img src="imagens/barba.jpg" alt="Barba">
+            <p class="produto-descricao">Barba e bigode desenhados de forma simétrica e elegante.</p>
+            <p class="produto-preco">R$ 20,00</p>
+          </li>
+          <li>
+            <h2>Cabelo + Barba</h2>
+            <img src="imagens/cabelo+barba.jpg" alt="Cabelo e barba">
+            <p class="produto-descricao">Combo completo para realçar seu visual com corte e barba.</p>
+            <p class="produto-preco">R$ 40,00</p>
+          </li>
+        </ul>
+      </main>
+      <footer class="footer">
+        <img src="imagens/logo_branco.png" alt="Logo branco Gu-Barber">
+        <p class="copy">&copy; copyright Gu-Barber Shop - 2026</p>
+      </footer>
+    </div>
+  </div>
+  <script>
+    const body = document.body;
+    const sidebarToggle = document.querySelector('.sidebar-toggle');
+    const themeToggle = document.querySelector('.theme-toggle');
+    const updateTheme = () => {
+      if (body.classList.contains('light')) {
+        themeToggle.textContent = '🌙';
+        themeToggle.title = 'Alternar para tema escuro';
+      } else {
+        themeToggle.textContent = '☀️';
+        themeToggle.title = 'Alternar para tema claro';
+      }
+    };
+    sidebarToggle?.addEventListener('click', () => body.classList.toggle('sidebar-collapsed'));
+    themeToggle?.addEventListener('click', () => {
+      body.classList.toggle('light');
+      updateTheme();
+    });
+    updateTheme();
+  </script>
+</body>
+</html>
