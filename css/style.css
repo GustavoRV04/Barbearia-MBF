@@ -61,18 +61,24 @@ body.sidebar-collapsed .content-area {
 }
 
 .content-area {
-  padding: 0;
+  /* keep room for the sidebar and add lateral gaps */
+  padding: 24px 40px;
   margin-left: 260px;
   width: calc(100% - 260px);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .page-main {
   flex: 1;
   display: grid;
   gap: 24px;
+  /* constrain content so blocks don't span full viewport width */
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 a {
@@ -155,18 +161,6 @@ textarea {
 .sidebar nav li a:hover {
   background: rgba(79, 214, 214, 0.14);
   color: var(--text);
-}
-
-.content-area {
-  padding: 0;
-  margin-left: 260px;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.page-main {
-  flex: 1;
 }
 
 .topbar {
@@ -389,6 +383,320 @@ body.light .icon-button {
   font-size: 1.55rem;
 }
 
+.gallery-section {
+  display: grid;
+  gap: 22px;
+  background: var(--surface);
+  border-radius: 24px;
+  padding: 30px 26px;
+}
+
+.section-header {
+  display: grid;
+  gap: 12px;
+  max-width: 860px;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: clamp(1.55rem, 2vw, 1.95rem);
+}
+
+.section-description {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 720px;
+}
+
+.gallery-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 45px rgba(0, 0, 0, 0.16);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+.page-intro {
+  padding: 28px 26px;
+}
+
+.gallery-page {
+  display: grid;
+  gap: 28px;
+}
+
+.gallery-hero {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 28px;
+  align-items: center;
+  padding: 36px;
+}
+
+.gallery-visual {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  min-height: 420px;
+}
+
+.gallery-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  right: 24px;
+  background: rgba(4, 20, 28, 0.8);
+  border: 1px solid rgba(79, 214, 214, 0.2);
+  border-radius: 24px;
+  padding: 26px;
+  color: #f4f7f9;
+}
+
+.hero-overlay strong {
+  display: block;
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+}
+
+.gallery-floor {
+  display: grid;
+  gap: 28px;
+  padding: 32px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.section-header {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.floor-header {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.lounge-layout,
+.lounge-grid,
+.barber-grid,
+.acervo-grid {
+  display: grid;
+  gap: 18px;
+  align-items: start;
+}
+
+.lounge-layout {
+  grid-template-columns: 1.4fr 1fr;
+  gap: 18px;
+}
+
+.lounge-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.floor-large-card,
+.barber-large-card,
+.acervo-large-card,
+.small-card,
+.detail-card {
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  min-height: 220px;
+}
+
+.floor-large-card,
+.barber-large-card,
+.acervo-large-card {
+  position: relative;
+}
+
+.floor-large-card img,
+.barber-large-card img,
+.acervo-large-card img,
+.small-card img,
+.detail-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.floor-large-card:hover img,
+.barber-large-card:hover img,
+.acervo-large-card:hover img,
+.small-card:hover img,
+.detail-card:hover img {
+  transform: scale(1.03);
+}
+
+.floor-card-copy {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  right: 24px;
+  padding: 24px;
+  background: rgba(4, 20, 28, 0.82);
+  border-radius: 22px;
+  border: 1px solid rgba(79, 214, 214, 0.18);
+  color: #f4f7f9;
+}
+
+.floor-card-copy strong {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+.small-images-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.small-card,
+.detail-card {
+  min-height: 210px;
+}
+
+.barber-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.barber-top-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.barber-details-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.barber-details-grid .detail-card {
+  min-height: 180px;
+}
+
+.acervo-grid {
+  grid-template-columns: 1.7fr 1fr;
+  align-items: start;
+}
+
+.acervo-layout {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 18px;
+}
+
+.acervo-small-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 180px;
+}
+
+@media (max-width: 1180px) {
+  .gallery-hero,
+  .lounge-grid,
+  .barber-grid,
+  .acervo-grid,
+  .acervo-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .small-images-row,
+  .barber-details-grid,
+  .acervo-small-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .gallery-hero,
+  .floor-section-layout,
+  .thumbnail-row,
+  .barber-top-row,
+  .barber-thumbnail-row,
+  .acervo-layout,
+  .acervo-small-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Override gallery layout after previous styles */
+.floor-section-layout,
+.thumbnail-row,
+.barber-top-row,
+.barber-thumbnail-row,
+.acervo-layout,
+.acervo-small-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.floor-section-layout {
+  grid-template-columns: 1fr;
+}
+
+.thumbnail-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.barber-top-row {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.barber-thumbnail-row {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.acervo-layout {
+  grid-template-columns: 1.7fr 1fr;
+}
+
+.acervo-small-grid {
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 180px;
+}
+
 .produtos li img {
   width: 100%;
   height: auto;
@@ -567,6 +875,7 @@ body.light .footer .copy {
   .content-area {
     min-height: calc(100vh - 20px);
     margin-left: 0;
+    padding: 20px 20px;
   }
   .footer {
     padding-left: 20px;
