@@ -753,6 +753,36 @@ body.light .icon-button {
   margin-left: 0;
 }
 
+.footer-socials {
+    display: flex;
+    gap: 16px; /* Espaço entre cada um dos ícones */
+    margin-top: 8px;
+}
+
+.footer-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%; /* Mantém as formas arredondadas exigidas pelo design */
+    background-color: var(--surface-container, #112229); /* Fundo ardósia escuro */
+    color: var(--secondary-text, #c3c7ca); 
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-socials a svg {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-socials a:hover {
+    background-color: var(--teal-accent, #44dfed); /* Destaque na cor Teal neon */
+    color: #00363b; /* Cor do ícone escurece para criar contraste com o fundo Teal */
+    transform: translateY(-4px); /* Animação de flutuação que eleva o botão */
+}
+
 .topbar {
   position: relative;
   z-index: 60;
