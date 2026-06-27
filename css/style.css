@@ -772,7 +772,9 @@ body.light .icon-button {
 .topbar {
   position: relative;
   z-index: 60;
-  padding-right: 110px; /* Cria um espaço na direita para o título e a descrição não cobrirem os botões */
+  width: 100%;
+  max-width: 1900px; /* Garante exatamente a mesma largura dos blocos inferiores */
+  margin: 0 auto 24px auto; /* Cria um espaço na direita para o título e a descrição não cobrirem os botões */
 }
 
 .topbar-actions {
@@ -917,13 +919,14 @@ body.light .footer .copy {
   }
 
   .topbar {
-    padding-right: 110px;
+    width: 100%;
+    padding-right: 0; 
   }
 
   .topbar-actions {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 15px; /* Ajuste leve para o celular */
+    right: 15px;
     justify-content: flex-end;
   }
 
@@ -969,4 +972,125 @@ body.light .footer .copy {
   .content-area {
     padding-top: 18px;
   }
+
+/* ===================================================
+   NOVO DESIGN V2: VISUAIS NA ESQUERDA, TEXTOS NA DIREITA (CORRIGIDO)
+   =================================================== */
+
+.localizacao-card {
+  padding: 50px 40px !important;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.localizacao-grid-novo {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  
+  /* A MÁGICA AQUI: Impede que o grid estique a foto verticalmente */
+  align-items: start !important; 
+}
+
+/* --- Coluna da Esquerda (Imagem + Mapa) --- */
+.visuais-esquerda {
+  display: flex;
+  flex-direction: column;
+  gap: 32px; /* Espaço elegante entre a foto e o mapa */
+  width: 100%;
+}
+
+.imagem-destaque {
+  width: 100% !important;
+  height: auto !important;
+  
+  /* Proporção 16:9 cravada, igual tela de TV. Nunca vai achatar. */
+  aspect-ratio: 16 / 9 !important; 
+  object-fit: cover !important;
+  
+  border-radius: 24px !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25) !important;
+  border: 1px solid var(--border);
+}
+
+.mapa-novo {
+  width: 100% !important;
+  height: auto !important;
+  
+  /* Exatamente a mesma proporção da foto de cima */
+  aspect-ratio: 16 / 9 !important; 
+  
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25) !important;
+  border: 1px solid var(--border);
+}
+
+/* Forçando o iframe a obedecer a caixa do mapa e ignorar regras antigas */
+.mapa-novo iframe {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: unset !important; 
+  border: 0 !important;
+  display: block !important;
+}
+
+/* --- Coluna da Direita (Textos) --- */
+.texto-direita {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.texto-direita .eyebrow {
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.texto-direita .titulo-principal {
+  margin-bottom: 24px;
+  padding-left: 0 !important; 
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+
+.conteudo-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+}
+
+.conteudo-texto p {
+  text-align: left !important;
+  font-size: 1.15rem; 
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0 !important;
+}
+
+/* ===================================================
+   RESPONSIVIDADE (CELULARES E TABLETS)
+   =================================================== */
+
+@media (max-width: 992px) {
+  .localizacao-grid-novo {
+    grid-template-columns: 1fr; /* Empilha tudo em telas médias */
+    gap: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .localizacao-card {
+    padding: 30px 20px !important;
+  }
+
+  .texto-direita .titulo-principal {
+    font-size: 1.8rem;
+  }
+}
 }
