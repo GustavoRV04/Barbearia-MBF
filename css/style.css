@@ -973,79 +973,72 @@ body.light .footer .copy {
     padding-top: 18px;
   }
 
-/* ===================================================
-   NOVO DESIGN V2: VISUAIS NA ESQUERDA, TEXTOS NA DIREITA (CORRIGIDO)
+}
+
+  /* ===================================================
+   DESIGN INTEGRADO: VISUAIS NA ESQUERDA, TEXTOS NA DIREITA
    =================================================== */
 
 .localizacao-card {
   padding: 50px 40px !important;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1900px;
   margin: 0 auto;
 }
 
 .localizacao-grid-novo {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 60px;
-  
-  /* A MÁGICA AQUI: Impede que o grid estique a foto verticalmente */
-  align-items: start !important; 
+  grid-template-columns: 1fr 1.2fr; /* Dá um pouco mais de espaço para a coluna de texto */
+  gap: 50px;
+  align-items: start !important; /* Impede que as imagens estiquem artificialmente */
 }
 
-/* --- Coluna da Esquerda (Imagem + Mapa) --- */
+/* --- Coluna da Esquerda (Mídias Uniformes) --- */
 .visuais-esquerda {
   display: flex;
   flex-direction: column;
-  gap: 32px; /* Espaço elegante entre a foto e o mapa */
+  gap: 24px;
   width: 100%;
 }
 
 .imagem-destaque {
   width: 100% !important;
   height: auto !important;
-  
-  /* Proporção 16:9 cravada, igual tela de TV. Nunca vai achatar. */
-  aspect-ratio: 16 / 9 !important; 
+  aspect-ratio: 16 / 9 !important; /* Força a proporção ideal de cinema */
   object-fit: cover !important;
-  
-  border-radius: 24px !important;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
   border: 1px solid var(--border);
 }
 
 .mapa-novo {
   width: 100% !important;
   height: auto !important;
-  
-  /* Exatamente a mesma proporção da foto de cima */
-  aspect-ratio: 16 / 9 !important; 
-  
-  border-radius: 24px !important;
+  aspect-ratio: 16 / 9 !important; /* Garante que o mapa tenha o mesmo tamanho exato da foto */
+  border-radius: 16px !important;
   overflow: hidden !important;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
   border: 1px solid var(--border);
 }
 
-/* Forçando o iframe a obedecer a caixa do mapa e ignorar regras antigas */
 .mapa-novo iframe {
   width: 100% !important;
   height: 100% !important;
-  min-height: unset !important; 
+  min-height: unset !important;
   border: 0 !important;
   display: block !important;
 }
 
-/* --- Coluna da Direita (Textos) --- */
+/* --- Coluna da Direita (Textos Ampliados) --- */
 .texto-direita {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .texto-direita .eyebrow {
   margin-bottom: 12px;
-  color: var(--accent);
+  color: var(--accent) !important;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -1053,34 +1046,31 @@ body.light .footer .copy {
 }
 
 .texto-direita .titulo-principal {
-  margin-bottom: 24px;
-  padding-left: 0 !important; 
-  font-size: 2.2rem;
+  margin-bottom: 24px !important;
+  padding-left: 0 !important;
+  font-size: 2.5rem !important; /* Título maior e mais imponente */
   line-height: 1.2;
 }
 
 .conteudo-texto {
   display: flex;
   flex-direction: column;
-  gap: 20px; 
+  gap: 22px; /* Espaçamento elegante entre parágrafos */
 }
 
 .conteudo-texto p {
   text-align: left !important;
-  font-size: 1.15rem; 
-  line-height: 1.7;
-  color: var(--muted);
+  font-size: 1.2rem !important; /* Leitura melhorada e tamanho maior solicitado */
+  line-height: 1.75 !important;
+  color: var(--muted) !important;
   margin: 0 !important;
 }
 
-/* ===================================================
-   RESPONSIVIDADE (CELULARES E TABLETS)
-   =================================================== */
-
+/* --- Responsividade Técnica --- */
 @media (max-width: 992px) {
   .localizacao-grid-novo {
-    grid-template-columns: 1fr; /* Empilha tudo em telas médias */
-    gap: 40px;
+    grid-template-columns: 1fr !important; /* Empilha no tablet/celular */
+    gap: 36px !important;
   }
 }
 
@@ -1088,9 +1078,10 @@ body.light .footer .copy {
   .localizacao-card {
     padding: 30px 20px !important;
   }
-
   .texto-direita .titulo-principal {
-    font-size: 1.8rem;
+    font-size: 1.9rem !important;
   }
-}
+
+
+
 }
