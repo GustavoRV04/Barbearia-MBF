@@ -312,23 +312,7 @@ body.light .icon-button {
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
   }
 
-.conteudo-benefícios {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  max-width: 840px;
-}
-
-.imgbeneficio {
-  width: 100%;
-  max-width: 620px;
-  height: auto;
-  margin-top: 24px;
-  object-fit: cover;
-  border-radius: 18px;
-}
-
-.lista-benefícios .itens {
+.lista-beneficios .itens {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -831,7 +815,7 @@ body.light .input-padrao {
   color: var(--text);
 }
 
-body.light .lista-benefícios .itens {
+body.light .lista-beneficios .itens {
   background: rgba(28, 53, 72, 0.06);
   border-color: rgba(28, 53, 72, 0.12);
   color: var(--text);
@@ -935,13 +919,13 @@ body.light .footer .copy {
   }
 
   .hero-card,
-  .conteudo-benefícios,
+  .conteudo-beneficios,
   .texto-wrapper {
     grid-template-columns: 1fr;
   }
 
   .hero-card,
-  .conteudo-benefícios {
+  .conteudo-beneficios {
     gap: 20px;
   }
 
@@ -1082,6 +1066,74 @@ body.light .footer .copy {
     font-size: 1.9rem !important;
   }
 
-
-
 }
+
+  /* ===================================================
+   BLOCO DE beneficios: IMAGEM E VÍDEO LADO A LADO
+   =================================================== */
+
+.beneficios-card {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important; /* Cria duas colunas de tamanhos iguais */
+  gap: 50px !important;
+  align-items: stretch !important; /* Faz os dois elementos ocuparem a mesma altura */
+  padding: 50px 40px !important;
+  width: 100%;
+  max-width: 1900px;
+  margin: 0 auto;
+}
+
+/* Força o container da imagem a esticar corretamente */
+.conteudo-beneficios {
+  margin: 0 !important;
+  max-width: 100% !important;
+  display: flex;
+}
+
+/* Modela a imagem para a mesma proporção do vídeo (16:9) */
+.imgbeneficio {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  margin-top: 0 !important;
+  aspect-ratio: 16 / 9 !important; 
+  object-fit: cover !important;
+  border-radius: 16px !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24) !important;
+}
+
+/* Força o container do vídeo a respeitar o novo layout */
+.beneficios-card .video {
+  margin: 0 !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  display: flex;
+}
+
+/* Estiliza o iframe do YouTube */
+.beneficios-card .video iframe {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: unset !important;
+  aspect-ratio: 16 / 9 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24) !important;
+  margin: 0 !important;
+}
+
+/* --- Responsividade para o Bloco de beneficios --- */
+@media (max-width: 992px) {
+  .beneficios-card {
+    grid-template-columns: 1fr !important; /* Empilha a imagem em cima do vídeo em telas menores */
+    gap: 32px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .beneficios-card {
+    padding: 30px 20px !important;
+  }
+}
+
+
+

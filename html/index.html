@@ -71,9 +71,9 @@
           </div>
         </section>
 
-        <section class="card benefícios-card">
-          <div class="conteudo-benefícios">
-            <img src="../imagens/beneficios.jpg" class="imgbeneficio" alt="imagem dos benefícios" title="fazendo a barba">
+        <section class="card beneficios-card">
+          <div class="conteudo-beneficios">
+            <img src="../imagens/beneficios.jpg" class="imgbeneficio" alt="imagem dos beneficios" title="fazendo a barba">
           </div>
           <div class="video">
             <iframe src="https://www.youtube.com/embed/hJMj-a-Jdcs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -86,38 +86,7 @@
       </footer>
     </div>
   </div>
-  <script>
-    const body = document.body;
-    const sidebarToggle = document.querySelector('.sidebar-toggle');
-    const themeToggle = document.querySelector('.theme-toggle');
-    const brandLogo = document.querySelector('.brand img');
-    const storedTheme = localStorage.getItem('site-theme');
 
-    if (storedTheme === 'light') {
-      body.classList.add('light');
-    }
-
-    const updateTheme = () => {
-      if (body.classList.contains('light')) {
-        themeToggle.textContent = '🌙';
-        themeToggle.title = 'Alternar para tema escuro';
-        if (brandLogo) brandLogo.src = '../imagens/logo (2).png';
-      } else {
-        themeToggle.textContent = '☀️';
-        themeToggle.title = 'Alternar para tema claro';
-        if (brandLogo) brandLogo.src = '../imagens/logo_branco.png';
-      }
-    };
-
-    sidebarToggle?.addEventListener('click', () => body.classList.toggle('sidebar-collapsed'));
-    themeToggle?.addEventListener('click', () => {
-      body.classList.toggle('light');
-      localStorage.setItem('site-theme', body.classList.contains('light') ? 'light' : 'dark');
-      updateTheme();
-    });
-
-    updateTheme();
-  </script>
   <script src="../js/main.js"></script>
 
 </body>
