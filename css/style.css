@@ -74,7 +74,7 @@ body.sidebar-collapsed .content-area {
   flex: 1;
   display: grid;
   gap: 24px;
-  max-width: 1600px;
+  max-width: 1900px;
   margin: 0 auto;
   width: 100%;
 }
@@ -174,19 +174,7 @@ textarea {
   transition: transform 0.25s ease;
 }
 
-.icon-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--text);
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
+
 
 .icon-button:hover {
   background: rgba(255, 255, 255, 0.12);
@@ -215,6 +203,7 @@ body.light .icon-button {
   display: grid;
   gap: 24px;
 }
+
 
 .card,
 .hero-card,
@@ -783,6 +772,15 @@ body.light .icon-button {
 .topbar {
   position: relative;
   z-index: 60;
+  padding-right: 110px; /* Cria um espaço na direita para o título e a descrição não cobrirem os botões */
+}
+
+.topbar-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px; /* Adiciona um espaçamento elegante entre os dois botões */
 }
 
 .topbar .icon-button {
@@ -919,13 +917,14 @@ body.light .footer .copy {
   }
 
   .topbar {
-    flex-direction: column;
-    align-items: stretch;
+    padding-right: 110px;
   }
 
   .topbar-actions {
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    position: absolute;
+    top: 0;
+    right: 0;
+    justify-content: flex-end;
   }
 
   .topbar .icon-button {
