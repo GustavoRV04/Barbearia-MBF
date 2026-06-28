@@ -7,6 +7,7 @@
   <link rel="shortcut icon" href="../imagens/man-5463556_640.png" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="../css/reset.css">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/carrossel.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -33,8 +34,51 @@
 
       <main class="page-main">
         <section class="page-intro card">
-          <p>Atendemos com foco em estilo, conforto e cuidado. Confira nossos pacotes de serviço abaixo.</p>
-        </section>
+          <div class="carrossel-container">
+            <p class="carrossel-text">Atendemos com foco em estilo, conforto e cuidado. Confira nossos pacotes de serviço abaixo.</p>
+    
+            <div class="carrossel-wrapper">
+            <!-- Imagens -->
+            <!-- O primeiro slide já começa com a classe 'active' -->
+            <div class="carrossel-slide active">
+              <img src="../imagens/Galeria/barber1.jpg" alt="Interior da Barbearia">
+            </div>
+            <div class="carrossel-slide">
+              <img src="../imagens/Galeria/barber2.jpg" alt="Cadeiras de barbeiro clássicas">
+            </div>
+            <div class="carrossel-slide">
+              <img src="../imagens/Galeria/barber3.jpg" alt="Nosso Lounge e Bar">
+            </div>
+            <div class="carrossel-slide">
+              <img src="../imagens/Galeria/barber4.jpg" alt="Nosso Lounge e Bar">
+            </div>
+            <div class="carrossel-slide">
+              <img src="../imagens/Galeria/barber5.jpg" alt="Nosso Lounge e Bar">
+            </div>
+            <div class="carrossel-slide">
+              <img src="../imagens/Galeria/barber6.jpg" alt="Nosso Lounge e Bar">
+            </div>
+            <div class="carrossel-slide">
+              <img src="../imagens/Galeria/barber9.jpg" alt="Nosso Lounge e Bar">
+            </div>
+            <div class="carrossel-slide">
+              <img src="../imagens/Galeria/barber8.jpg" alt="Nosso Lounge e Bar">
+            </div>
+        
+            <!-- HUD (Indicadores) controláveis pelo rato -->
+            <div class="carrossel-hud">
+              <span class="hud-dot active" onclick="mudarSlide(0)"></span>
+              <span class="hud-dot" onclick="mudarSlide(1)"></span>
+              <span class="hud-dot" onclick="mudarSlide(2)"></span>
+              <span class="hud-dot" onclick="mudarSlide(3)"></span>
+              <span class="hud-dot" onclick="mudarSlide(4)"></span>
+              <span class="hud-dot" onclick="mudarSlide(5)"></span>
+              <span class="hud-dot" onclick="mudarSlide(6)"></span>
+              <span class="hud-dot" onclick="mudarSlide(7)"></span>
+            </div>
+          </div>
+        </div>
+      </section>
 
         <ul class="produtos">
           <li>

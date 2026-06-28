@@ -1,0 +1,119 @@
+.carrossel-container {
+    background-color: var(--surface-container, #112229);
+    border-radius: var(--border-radius-lg, 1rem);
+    padding: var(--spacing-gutter, 24px);
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.carrossel-text {
+    color: var(--secondary-text, #c3c7ca);
+    font-size: 16px;
+    font-family: 'Manrope', sans-serif;
+}
+
+/* --- Contentor Responsivo (Mobile-first) --- */
+.carrossel-wrapper {
+    position: relative;
+    width: 100%;
+    /* Formato mais "quadrado" para telemóveis, para mostrar a maior parte da foto */
+    aspect-ratio: 4 / 3; 
+    max-height: 600px;
+    border-radius: var(--border-radius-md, 0.75rem);
+    overflow: hidden;
+    background-color: var(--surface-container-lowest, #011018);
+}
+
+.carrossel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    z-index: 1;
+}
+
+.carrossel-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* --- 2. Foco da Imagem --- */
+.carrossel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; /* Volta a focar no centro */
+}
+
+/* --- 3. HUD sempre visível --- */
+.carrossel-hud {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px; /* Aumentado o espaço entre os pontos */
+    z-index: 999;
+    background: rgba(1, 16, 24, 0.7);
+    padding: 10px 16px; /* Área de fundo maior */
+    border-radius: 24px;
+}
+
+.hud-dot {
+    width: 10px; /* Aumentado de 8px para 10px no mobile */
+    height: 10px;
+    border-radius: 50%; /* Mantém o padrão de formas arredondadas do Design System */
+    background-color: var(--secondary-text, #c3c7ca);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+}
+
+.hud-dot:hover {
+    opacity: 1;
+}
+
+.hud-dot.active {
+    width: 32px; /* Aumentado de 24px para 32px na pílula ativa */
+    border-radius: 6px;
+    background-color: var(--teal-accent, #44dfed); /* Mantém o destaque em Teal */
+    opacity: 1;
+}
+
+/* --- Media Queries (Tablet e Desktop) --- */
+@media (min-width: 768px) {
+    .carrossel-wrapper {
+        /* Um formato ligeiramente mais alto (16:10) para dar espaço vertical à foto */
+        aspect-ratio: 16 / 10; 
+        
+        /* Aumentamos a altura máxima para 720px para não esmagar a imagem em monitores grandes */
+        max-height: 720px; 
+    }
+
+    .carrossel-slide img {
+        /* Desloca o foco da imagem para 25% do topo (ajuda muito a não cortar rostos e cortes de cabelo) */
+        object-position: center 25%; 
+    }
+
+    .carrossel-hud {
+        gap: 16px;
+        padding: 12px 24px;
+        bottom: 32px; /* Afasta um pouco mais da borda em telas grandes */
+    }
+
+    .hud-dot {
+        width: 14px; /* Pontos muito maiores no computador */
+        height: 14px;
+    }
+
+    .hud-dot.active {
+        width: 44px; /* Pílula ativa muito mais larga para destaque */
+        border-radius: 8px;
+    }
+    
+}

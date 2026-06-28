@@ -81,3 +81,60 @@ function configurarTema() {
         });
     }
 }
+
+// ==========================================
+// LÓGICA DO CARROSSEL DE IMAGENS
+// ==========================================
+let slideIndex = 0;
+let carrosselTimer;
+
+// Função chamada para iniciar a troca automática
+function iniciarCarrossel() {
+    const slides = document.querySelectorAll('.carrossel-slide');
+    if (slides.length === 0) return; // Se não houver carrossel na página, ignora
+    
+    // Configura a troca a cada 5000 milissegundos (5 segundos)
+    carrosselTimer = setInterval(avancarSlide, 5000);
+}
+
+function avancarSlide() {
+    const slides = document.querySelectorAll('.carrossel-slide');
+    let nextIndex = slideIndex + 1;
+    
+    // Se chegar à última imagem, volta para a primeira
+    if (nextIndex >= slides.length) {
+        nextIndex = 0;
+    }
+    mudarSlide(nextIndex);
+}
+
+// Função acionada ao clicar nos botões do HUD (rato)
+window.mudarSlide = function(index) {
+    const slides = document.querySelectorAll('.carrossel-slide');
+    const dots = document.querySelectorAll('.hud-dot');
+    
+    if (slides.length === 0) return;
+
+    // Remove as classes ativas das imagens e dos pontos atuais
+    slides[slideIndex].classList.remove('active');
+    dots[slideIndex].classList.remove('active');
+    
+    // Atualiza o índice para o escolhido
+    slideIndex = index;
+    
+    // Adiciona as classes ativas à nova imagem e ponto selecionado
+    slides[slideIndex].classList.add('active');
+    dots[slideIndex].classList.add('active');
+    
+    // Reinicia o tempo automático para não trocar imediatamente após o clique manual
+    clearInterval(carrosselTimer);
+    carrosselTimer = setInterval(avancarSlide, 5000);
+}
+
+// Para garantir que o carrossel inicia quando a página carregar, 
+// certifique-se de adicionar a chamada da função no seu DOMContentLoaded existente, assim:
+document.addEventListener("DOMContentLoaded", function() {
+    // ... os seus códigos existentes da sidebar e tema ...
+    
+    iniciarCarrossel(); // Chama a inicialização do carrossel
+});
