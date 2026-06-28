@@ -351,16 +351,22 @@ body.light .icon-button {
 .produtos {
   display: grid;
   gap: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 400px)); /* Define largura máxima de 300px */
+  justify-content: center; /* Centraliza os blocos na tela */
   padding: 22px 0;
+  align-self: start;
 }
 
 .produtos li {
   background: var(--surface);
-  border-radius: 0;
-  padding: 28px 24px;
+  border-radius: 16px;
+  padding: 20px 20px 12px 20px; /* Reduz o espaçamento de baixo para 12px, encolhendo o bloco */
   box-shadow: none;
   transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .produtos li:hover {
@@ -370,6 +376,32 @@ body.light .icon-button {
 .produtos li h2 {
   margin: 0 0 14px;
   font-size: 1.55rem;
+}
+
+.produtos li img {
+  width: 75px;  /* Mudou de 100% para 75px */
+  height: 75px; /* Mudou de auto para 75px */
+  max-height: 220px;
+  object-fit: contain;
+  border-radius: 0;
+  margin-bottom: 18px;
+  display: block;
+}
+
+.produto-descricao {
+  margin: 0 0 12px; 
+  color: var(--muted);
+  font-size: 0.92rem; 
+  line-height: 1.4; 
+  flex-grow: 1;
+  
+}
+
+.produto-preco {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
 .gallery-section {
@@ -686,27 +718,6 @@ body.light .icon-button {
   grid-auto-rows: 180px;
 }
 
-.produtos li img {
-  width: 100%;
-  height: auto;
-  max-height: 220px;
-  object-fit: contain;
-  border-radius: 0;
-  margin-bottom: 18px;
-  display: block;
-}
-
-.produto-descricao {
-  margin: 0 0 16px;
-  color: var(--muted);
-}
-
-.produto-preco {
-  margin: 0;
-  color: var(--text);
-  font-size: 1.1rem;
-  font-weight: 700;
-}
 
 .form-card {
   padding: 36px;
@@ -1181,6 +1192,74 @@ body.light .footer .copy {
   .beneficios-card {
     padding: 30px 20px !important;
   }
+}
+
+/* ===================================================
+   ESTILIZAÇÃO DEFINITIVA E CORREÇÃO DOS BOTÕES (.icon-button)
+   =================================================== */
+
+/* 1. Estilo Base Geral (Corrige os blocos brancos do navegador) */
+.icon-button {
+  background: rgba(255, 255, 255, 0.08) !important; /* Fundo sutil transparente no tema escuro */
+  border: 1px solid var(--border) !important;
+  border-radius: 50% !important; /* Força os botões a serem perfeitamente redondos */
+  width: 42px !important;
+  height: 42px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  padding: 0 !important;
+}
+
+.icon-button:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-2px) !important;
+}
+
+.icon-button img {
+  width: 20px !important;
+  height: 20px !important;
+  object-fit: contain !important;
+  display: block !important;
+  pointer-events: none !important;
+}
+
+/* 2. Regras para as Subpáginas (Produtos, Contatos, etc.) */
+
+/* Garante ícones brancos originais no tema escuro das subpáginas */
+.topbar > .topbar-actions .icon-button img {
+  filter: none !important;
+}
+
+/* Modifica o fundo e inverte o ícone para preto apenas no tema claro das subpáginas */
+body.light .topbar > .topbar-actions .icon-button {
+  background: rgba(16, 34, 43, 0.08) !important;
+  border-color: rgba(16, 34, 43, 0.15) !important;
+}
+
+body.light .topbar > .topbar-actions .icon-button img {
+  filter: invert(1) !important; /* Ícone fica preto para contrastar com o fundo claro */
+}
+
+/* 3. Regras para a Home (index.html) - Solução do sumiço */
+
+/* Como o Hero Header é SEMPRE escuro por causa da foto de fundo, 
+   os botões dentro dele precisam ignorar a mudança de tema e continuar claros */
+.hero-header .icon-button {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.hero-header .icon-button:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Impede o ícone de ser invertido para preto dentro do Hero Header */
+body.light .hero-header .icon-button img,
+.hero-header .icon-button img {
+  filter: none !important; /* Mantém os ícones brancos e visíveis sobre a foto escura */
 }
 
 
