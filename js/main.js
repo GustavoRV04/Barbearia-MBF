@@ -47,24 +47,20 @@ function configurarInteracoesSidebar() {
 
 // Função para Alternar o Tema
 function configurarTema() {
-    // Procura o botão pela classe correta definida no index.html
     const btnToggleTema = document.querySelector('.theme-toggle');
     const brandLogo = document.querySelector('.brand img');
+    // Seleciona o elemento de imagem dentro do botão de tema
+    const imgToggleTema = btnToggleTema ? btnToggleTema.querySelector('img') : null;
 
-    // Função interna para atualizar os ícones e imagens dependendo do tema atual
     const updateThemeUI = () => {
         if (document.body.classList.contains('light')) {
-            if (btnToggleTema) {
-                btnToggleTema.textContent = '🌙';
-                btnToggleTema.title = 'Alternar para tema escuro';
-            }
-            if (brandLogo) brandLogo.src = '../imagens/logo (2).png'; // Logo escura para tema claro
+            if (imgToggleTema) imgToggleTema.src = '../favicon/dark.png'; // Mostra a lua no tema claro
+            if (btnToggleTema) btnToggleTema.title = 'Alternar para tema escuro';
+            if (brandLogo) brandLogo.src = '../imagens/logo (2).png';
         } else {
-            if (btnToggleTema) {
-                btnToggleTema.textContent = '☀️';
-                btnToggleTema.title = 'Alternar para tema claro';
-            }
-            if (brandLogo) brandLogo.src = '../imagens/logo_branco.png'; // Logo branca para tema escuro
+            if (imgToggleTema) imgToggleTema.src = '../favicon/sunny.png'; // Mostra o sol no tema escuro
+            if (btnToggleTema) btnToggleTema.title = 'Alternar para tema claro';
+            if (brandLogo) brandLogo.src = '../imagens/logo_branco.png';
         }
     };
 
