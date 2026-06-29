@@ -729,14 +729,14 @@ body.light .icon-button {
 }
 
 .form-card label {
-  display: block;
+  display: inline-block;
   color: var(--text);
   font-size: 0.98rem;
   margin-bottom: 8px;
 }
 
 .input-padrao {
-  width: 100%;
+  width: 40%;
   min-height: 44px;
   padding: 14px 16px;
   border: 1px solid var(--border);
@@ -810,6 +810,29 @@ body.light .icon-button {
     background-color: var(--teal-accent, #44dfed); /* Destaque na cor Teal neon */
     color: #00363b; /* Cor do ícone escurece para criar contraste com o fundo Teal */
     transform: translateY(-4px); /* Animação de flutuação que eleva o botão */
+}
+
+/* ===================================================
+   ALINHAMENTO DO LINK DE AVALIAÇÃO NO FOOTER
+   =================================================== */
+
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Espaçamento ideal entre o link e o copyright */
+}
+
+.footer-link {
+  color: var(--muted);
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--accent); /* Ganha o tom verde/azul neon clássico do seu site ao passar o mouse */
+  text-decoration: underline;
 }
 
 .topbar {
