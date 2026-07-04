@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Gu-Barber Produtos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../imagens/man-5463556_640.png" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../css/reset.css">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/produtos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="layout">
+    <div id="sidebar-container"></div>
+
+    <div class="content-area">
+      <header class="topbar">
+        <div class="page-title">
+          <h1>Produtos</h1>
+          <p>Explore nossos itens de barbearia e bar com rapidez para adicionar ao carrinho ou à lista de favoritos.</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-button sidebar-toggle" type="button" aria-label="Abrir ou fechar menu">
+            <img src="../favicon/menu.png" alt="Abrir menu">
+          </button>
+          <button class="icon-button theme-toggle" type="button" aria-label="Alternar tema">
+            <img src="../favicon/sunny.png" alt="Alternar tema">
+          </button>
+          <button class="icon-button cart-button" type="button" aria-label="Carrinho">
+            <img src="../favicon/shopping_cart.png" alt="Carrinho" class="cart-icon-img">
+            <span class="cart-badge" id="cart-count">0</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="page-main product-page">
+        <section class="page-intro card product-intro">
+          <h2>Escolha entre nossos destaques</h2>
+          <p>Aqui você encontra produtos para manter o estilo na barbearia e bebidas premium para seu momento no lounge.</p>
+        </section>
+
+        <section class="product-category card">
+          <div class="category-heading">
+            <div>
+              <span class="eyebrow">Barbearia</span>
+              <h2>Itens para cuidar do seu visual</h2>
+            </div>
+            <p>Produtos selecionados para corte, barba e acabamento profissional no estilo Gu-Barber.</p>
+          </div>
+
+          <div class="product-grid">
+            <article class="product-card" data-product-id="barb-01">
+              <div class="product-image">
+                <img src="../imagens/Galeria/barber1.jpg" alt="Pomada modeladora" title="Pomada modeladora">
+              </div>
+              <div class="product-item">
+                <h3>Pomada Modeladora</h3>
+                <p>Fixação média e acabamento natural para cortes modernos e texturizados.</p>
+                <div class="product-footer">
+                  <span class="product-price">R$ 39,90</span>
+                  <div class="product-actions">
+                    <button class="btn btn-favorite" type="button" aria-label="Favoritar produto">
+                        <img src="../favicon/favorite.png" alt="Favorito" class="cart-icon-img">
+                    </button>
+                    <button class="btn btn-primary btn-add-cart" type="button">Adicionar</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-product-id="barb-02">
+              <div class="product-image">
+                <img src="../imagens/Galeria/barber2.jpg" alt="Óleo para barba" title="Óleo para barba">
+              </div>
+              <div class="product-item">
+                <h3>Óleo para Barba</h3>
+                <p>Hidratação leve e aroma amadeirado para manter a barba alinhada por horas.</p>
+                <div class="product-footer">
+                  <span class="product-price">R$ 49,90</span>
+                  <div class="product-actions">
+                    <button class="btn btn-favorite" type="button" aria-label="Favoritar produto">
+                        <img src="../favicon/favorite.png" alt="Favorito" class="cart-icon-img">
+                    </button>
+                    <button class="btn btn-primary btn-add-cart" type="button">Adicionar</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-product-id="barb-03">
+              <div class="product-image">
+                <img src="../imagens/cabelo+barba.jpg" alt="Kit de barbear" title="Kit de barbear">
+              </div>
+              <div class="product-item">
+                <h3>Kit Premium</h3>
+                <p>Conjunto com escova, navalha e cera para acabamento perfeito em qualquer estilo.</p>
+                <div class="product-footer">
+                  <span class="product-price">R$ 89,90</span>
+                  <div class="product-actions">
+                    <button class="btn btn-favorite" type="button" aria-label="Favoritar produto">
+                        <img src="../favicon/favorite.png" alt="Favorito" class="cart-icon-img">
+                    </button>
+                    <button class="btn btn-primary btn-add-cart" type="button">Adicionar</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-product-id="barb-04">
+              <div class="product-image">
+                <img src="../imagens/utensilios.jpg" alt="Acessórios de barbear" title="Acessórios de barbear">
+              </div>
+              <div class="product-item">
+                <h3>Acessórios</h3>
+                <p>Pentes, tesouras e lâminas profissionais com acabamento de alta qualidade.</p>
+                <div class="product-footer">
+                  <span class="product-price">R$ 59,90</span>
+                  <div class="product-actions">
+                    <button class="btn btn-favorite" type="button" aria-label="Favoritar produto">
+                        <img src="../favicon/favorite.png" alt="Favorito" class="cart-icon-img">
+                    </button>
+                    <button class="btn btn-primary btn-add-cart" type="button">Adicionar</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="product-category card">
+          <div class="category-heading">
+            <div>
+              <span class="eyebrow">Bar</span>
+              <h2>Itens para o seu momento no lounge</h2>
+            </div>
+            <p>Seleção especial de bebidas e acessórios para acompanhar sua visita à Gu-Barber.</p>
+          </div>
+
+          <div class="product-grid">
+            <article class="product-card" data-product-id="bar-01">
+              <div class="product-image">
+                <img src="../imagens/Galeria/bar1.jpg" alt="Whisky especial" title="Whisky especial">
+              </div>
+              <div class="product-item">
+                <h3>Whisky Especial</h3>
+                <p>Sabor encorpado com notas de carvalho, perfeito para brindar ao estilo do dia.</p>
+                <div class="product-footer">
+                  <span class="product-price">R$ 79,90</span>
+                  <div class="product-actions">
+                    <button class="btn btn-favorite" type="button" aria-label="Favoritar produto">
+                      <img src="../favicon/favorite.png" alt="Favorito" class="cart-icon-img">
+                    </button>
+                    <button class="btn btn-primary btn-add-cart" type="button">Adicionar</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-product-id="bar-02">
+              <div class="product-image">
+                <img src="../imagens/Galeria/bar4.jpg" alt="Drink da casa" title="Drink da casa">
+              </div>
+              <div class="product-item">
+                <h3>Drink da Casa</h3>
+                <p>Receita exclusiva com toque de frutas e especiarias para brindar sua visita.</p>
+                <div class="product-footer">
+                  <span class="product-price">R$ 34,90</span>
+                  <div class="product-actions">
+                    <button class="btn btn-favorite" type="button" aria-label="Favoritar produto">
+                      <img src="../favicon/favorite.png" alt="Favorito" class="cart-icon-img">
+                    </button>
+                    <button class="btn btn-primary btn-add-cart" type="button">Adicionar</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-product-id="bar-03">
+              <div class="product-image">
+                <img src="../imagens/Galeria/bar5.jpg" alt="Cerveja artesanal" title="Cerveja artesanal">
+              </div>
+              <div class="product-item">
+                <h3>Cerveja Artesanal</h3>
+                <p>Puro sabor, ideal para relaxar enquanto aguarda seu atendimento no lounge.</p>
+                <div class="product-footer">
+                  <span class="product-price">R$ 24,90</span>
+                  <div class="product-actions">
+                    <button class="btn btn-favorite" type="button" aria-label="Favoritar produto">
+                      <img src="../favicon/favorite.png" alt="Favorito" class="cart-icon-img">
+                    </button>
+                    <button class="btn btn-primary btn-add-cart" type="button">Adicionar</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-product-id="bar-04">
+              <div class="product-image">
+                <img src="../imagens/Galeria/bar6.jpg" alt="Aperitivo especial" title="Aperitivo especial">
+              </div>
+              <div class="product-item">
+                <h3>Aperitivo Especial</h3>
+                <p>Petiscos selecionados para acompanhar sua bebida com estilo e sabor.</p>
+                <div class="product-footer">
+                  <span class="product-price">R$ 44,90</span>
+                  <div class="product-actions">
+                    <button class="btn btn-favorite" type="button" aria-label="Favoritar produto">
+                      <img src="../favicon/favorite.png" alt="Favorito" class="cart-icon-img">
+                    </button>
+                    <button class="btn btn-primary btn-add-cart" type="button">Adicionar</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <img src="../imagens/logo_branco.png" alt="Logo branco Gu-Barber">
+        
+        <div class="footer-center">
+          <a href="contatos.html" class="footer-link">Avalie-nos</a>
+          <p class="copy">&copy; copyright Gu-Barber Shop - 2026</p>
+        </div>
+
+        <div class="footer-socials">
+        <!-- Instagram -->
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram da barbearia">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+        
+        <!-- Facebook -->
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook da barbearia">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/5551999999999" target="_blank" aria-label="WhatsApp da barbearia">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4a8.94 8.94 0 0 0-7.74 13.4L3 21l3.7-1.27a8.93 8.93 0 0 0 4.31 1.1h.04a8.94 8.94 0 0 0 8.93-8.9 8.83 8.83 0 0 0-2.38-5.61zm-5.55 13.7h-.03a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.81.97.94-2.73-.18-.28a7.44 7.44 0 0 1-1.14-3.95 7.45 7.45 0 0 1 12.7-5.27 7.36 7.36 0 0 1 2.17 5.24 7.45 7.45 0 0 1-7.6 7.22zm4.08-5.58c-.22-.11-1.31-.65-1.51-.72-.2-.08-.35-.11-.5.11-.15.22-.57.72-.7.87-.13.15-.26.16-.48.05a6.06 6.06 0 0 1-1.78-1.1 6.7 6.7 0 0 1-1.23-1.53c-.13-.22-.01-.34.11-.45.11-.11.25-.28.37-.42a.55.55 0 0 0 .09-.55c-.05-.11-.5-1.2-.69-1.65-.18-.43-.36-.37-.5-.37-.13 0-.28-.01-.43-.01a.83.83 0 0 0-.6.28 2.52 2.52 0 0 0-.79 1.88c0 1.11.81 2.18.92 2.33.11.15 1.57 2.4 3.8 3.27 1.86.73 2.24.59 2.65.55.4-.04 1.31-.54 1.49-1.06.18-.52.18-.96.13-1.06-.05-.1-.2-.16-.42-.27z"></path>
+            </svg>
+        </a>
+    </div>
+      </footer>
+    </div>
+  </div>
+
+  <div class="cart-panel" id="cart-panel">
+    <div class="cart-panel-content">
+      <div class="cart-panel-header">
+        <div>
+          <span class="eyebrow">Carrinho</span>
+          <h3>Seus itens</h3>
+        </div>
+        <button class="cart-panel-close" id="cart-close" type="button" aria-label="Fechar carrinho">×</button>
+      </div>
+      <div class="cart-panel-body" id="cart-items"></div>
+      <div class="cart-summary">
+        <span>Total</span>
+        <strong id="cart-total">R$ 0,00</strong>
+      </div>
+      <button class="btn btn-primary btn-checkout" id="checkout-button" type="button">Comprar</button>
+      <p class="checkout-message" id="checkout-message" hidden>Obrigado pela confiança</p>
+    </div>
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/produtos.js"></script>
+</body>
+</html>
