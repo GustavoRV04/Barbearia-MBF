@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Gu-Barber Avaliar Barbearia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../imagens/man-5463556_640.png" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../css/reset.css">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/avaliacao.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="layout">
+    <div id="sidebar-container"></div>
+    <div class="content-area">
+      <header class="topbar">
+        <div class="page-title">
+          <h1>Avalie a Barbearia</h1>
+          <p>Conte como foi sua experiência com corte, barba, ambiente e atendimento.</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-button sidebar-toggle" type="button" aria-label="Abrir ou fechar menu">
+            <img src="../favicon/menu.png" alt="Abrir menu">
+          </button>
+          <button class="icon-button theme-toggle" type="button" aria-label="Alternar tema">
+            <img src="../favicon/sunny.png" alt="Alternar tema">
+          </button>
+        </div>
+      </header>
+      <main class="page-main review-page">
+        <section class="review-card review-grid">
+          <div class="review-header">
+            <span class="eyebrow">Barbearia</span>
+            <h1>Avalie seu atendimento</h1>
+            <p>Sua opinião nos ajuda a manter a excelência no grooming, corte e ambiente.</p>
+          </div>
+          <!-- Staff selection: copied from equipe.html (Barbearia) -->
+          <div class="staff-section">
+            <h2 class="section-title">1. Escolha seu Barbeiro</h2>
+            <div class="staff-choices cards-grid">
+              <div class="card" data-staff="Ricardo">
+                  <img src="../imagens/equipe/ricardo.png" alt="Ricardo, Master Barber" class="card-image">
+                  <div class="card-body">
+                      <h3 class="headline-mobile">Ricardo</h3>
+                      <span class="role-label">Barbeiro & Sócio</span>
+                  </div>
+              </div>
+              <div class="card" data-staff="Alexandre">
+                  <img src="../imagens/equipe/alexandre.png" alt="Alexandre, Senior Groomer" class="card-image">
+                  <div class="card-body">
+                      <h3 class="headline-mobile">Alexandre</h3>
+                      <span class="role-label">Barbeiro</span>
+                  </div>
+              </div>
+              <div class="card" data-staff="Bruno">
+                  <img src="../imagens/equipe/bruno.png" alt="Bruno, Fade Specialist" class="card-image">
+                  <div class="card-body">
+                      <h3 class="headline-mobile">Bruno</h3>
+                      <span class="role-label">Barbeiro</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <form class="review-form review-grid-right">
+            <div class="rating-card">
+              <h2>Qualidade do corte</h2>
+              <div class="star-rating">
+                <input type="radio" id="corte-5" name="corte" value="5"><label for="corte-5">★</label>
+                <input type="radio" id="corte-4" name="corte" value="4"><label for="corte-4">★</label>
+                <input type="radio" id="corte-3" name="corte" value="3"><label for="corte-3">★</label>
+                <input type="radio" id="corte-2" name="corte" value="2"><label for="corte-2">★</label>
+                <input type="radio" id="corte-1" name="corte" value="1"><label for="corte-1">★</label>
+              </div>
+            </div>
+            <div class="rating-card">
+              <h2>Atendimento</h2>
+              <div class="star-rating">
+                <input type="radio" id="atendimento-5" name="atendimento" value="5"><label for="atendimento-5">★</label>
+                <input type="radio" id="atendimento-4" name="atendimento" value="4"><label for="atendimento-4">★</label>
+                <input type="radio" id="atendimento-3" name="atendimento" value="3"><label for="atendimento-3">★</label>
+                <input type="radio" id="atendimento-2" name="atendimento" value="2"><label for="atendimento-2">★</label>
+                <input type="radio" id="atendimento-1" name="atendimento" value="1"><label for="atendimento-1">★</label>
+              </div>
+            </div>
+            <div class="rating-card">
+              <h2>Higiene</h2>
+              <div class="star-rating">
+                <input type="radio" id="higiene-5" name="higiene" value="5"><label for="higiene-5">★</label>
+                <input type="radio" id="higiene-4" name="higiene" value="4"><label for="higiene-4">★</label>
+                <input type="radio" id="higiene-3" name="higiene" value="3"><label for="higiene-3">★</label>
+                <input type="radio" id="higiene-2" name="higiene" value="2"><label for="higiene-2">★</label>
+                <input type="radio" id="higiene-1" name="higiene" value="1"><label for="higiene-1">★</label>
+              </div>
+            </div>
+            <div class="rating-card">
+              <h2>Tempo de espera</h2>
+              <div class="star-rating">
+                <input type="radio" id="espera-5" name="espera" value="5"><label for="espera-5">★</label>
+                <input type="radio" id="espera-4" name="espera" value="4"><label for="espera-4">★</label>
+                <input type="radio" id="espera-3" name="espera" value="3"><label for="espera-3">★</label>
+                <input type="radio" id="espera-2" name="espera" value="2"><label for="espera-2">★</label>
+                <input type="radio" id="espera-1" name="espera" value="1"><label for="espera-1">★</label>
+              </div>
+            </div>
+            <div class="form-group full-width">
+              <label for="barbearia-comments">Observações</label>
+              <textarea id="barbearia-comments" class="input-padrao" rows="6" placeholder="Conte como foi sua experiência..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit">Enviar Avaliação</button>
+          </form>
+        </section>
+      </main>
+      <footer class="footer">
+        <img src="../imagens/logo_branco.png" alt="Logo branco Gu-Barber">
+        
+        <div class="footer-center">
+          <a href="avaliar.html" class="footer-link">Avalie-nos</a>
+          <p class="copy">&copy; copyright Gu-Barber Shop - 2026</p>
+        </div>
+
+        <div class="footer-socials">
+        <!-- Instagram -->
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram da barbearia">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </a>
+        
+        <!-- Facebook -->
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook da barbearia">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/5551999999999" target="_blank" aria-label="WhatsApp da barbearia">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4a8.94 8.94 0 0 0-7.74 13.4L3 21l3.7-1.27a8.93 8.93 0 0 0 4.31 1.1h.04a8.94 8.94 0 0 0 8.93-8.9 8.83 8.83 0 0 0-2.38-5.61zm-5.55 13.7h-.03a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.81.97.94-2.73-.18-.28a7.44 7.44 0 0 1-1.14-3.95 7.45 7.45 0 0 1 12.7-5.27 7.36 7.36 0 0 1 2.17 5.24 7.45 7.45 0 0 1-7.6 7.22zm4.08-5.58c-.22-.11-1.31-.65-1.51-.72-.2-.08-.35-.11-.5.11-.15.22-.57.72-.7.87-.13.15-.26.16-.48.05a6.06 6.06 0 0 1-1.78-1.1 6.7 6.7 0 0 1-1.23-1.53c-.13-.22-.01-.34.11-.45.11-.11.25-.28.37-.42a.55.55 0 0 0 .09-.55c-.05-.11-.5-1.2-.69-1.65-.18-.43-.36-.37-.5-.37-.13 0-.28-.01-.43-.01a.83.83 0 0 0-.6.28 2.52 2.52 0 0 0-.79 1.88c0 1.11.81 2.18.92 2.33.11.15 1.57 2.4 3.8 3.27 1.86.73 2.24.59 2.65.55.4-.04 1.31-.54 1.49-1.06.18-.52.18-.96.13-1.06-.05-.1-.2-.16-.42-.27z"></path>
+            </svg>
+        </a>
+    </div>
+      </footer>
+    </div>
+  </div>
+  <script src="../js/main.js"></script>
+  <script src="../js/avaliar.js"></script>
+</body>
+</html>

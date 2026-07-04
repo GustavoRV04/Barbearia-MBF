@@ -62,14 +62,16 @@
 }
 
 .product-image {
-  min-height: 240px;
+  height: 380px;
   overflow: hidden;
+  border-radius: 24px 24px 0 0;
 }
 
 .product-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   display: block;
 }
 
