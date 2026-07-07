@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="utf-8">
-  <title>Gu-Barber Avaliação</title>
+  <title>Gu-Barber Avaliar Bar & Lounge</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="../imagens/man-5463556_640.png" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="../css/reset.css">
@@ -15,12 +15,11 @@
 <body>
   <div class="layout">
     <div id="sidebar-container"></div>
-
     <div class="content-area">
       <header class="topbar">
         <div class="page-title">
-          <h1>Avaliação do Cliente</h1>
-          <p>Preencha seus dados e escolha se quer avaliar a Barbearia ou o Bar & Lounge.</p>
+          <h1>Avalie o Bar & Lounge</h1>
+          <p>Compartilhe sua experiência com drinks, ambiente e atendimento.</p>
         </div>
         <div class="topbar-actions">
           <button class="icon-button sidebar-toggle" type="button" aria-label="Abrir ou fechar menu">
@@ -31,65 +30,81 @@
           </button>
         </div>
       </header>
-
       <main class="page-main review-page">
         <section class="review-card">
           <div class="review-header">
-            <span class="eyebrow">Comece aqui</span>
-            <h1>Cadastro para avaliação</h1>
-            <p>Informe seus dados e selecione o local que deseja avaliar. O formulário seguinte será personalizado conforme sua escolha.</p>
+            <span class="eyebrow">Bar & Lounge</span>
+            <h1>Avalie sua experiência</h1>
+            <p>Nos conte como foi o ambiente, os drinks e o atendimento do lounge.</p>
           </div>
-
-          <form id="review-choice-form" class="review-form">
-            <div class="field-grid">
-              <div class="form-group">
-                <label for="fullName">Nome completo</label>
-                <input type="text" id="fullName" name="fullName" class="input-padrao" placeholder="Digite seu nome completo" required>
-              </div>
-              <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" class="input-padrao" placeholder="seu@email.com" required>
-              </div>
-              <div class="form-group">
-                <label for="phone">Telefone</label>
-                <input type="tel" id="phone" name="phone" class="input-padrao" placeholder="(xx) xxxxx-xxxx" required>
+          <div class="review-body review-grid">
+            <form class="review-form review-grid-right">
+            <div class="rating-card">
+              <h2>Qualidade dos drinks</h2>
+              <div class="star-rating">
+                <input type="radio" id="drinks-5" name="drinks" value="5"><label for="drinks-5">★</label>
+                <input type="radio" id="drinks-4" name="drinks" value="4"><label for="drinks-4">★</label>
+                <input type="radio" id="drinks-3" name="drinks" value="3"><label for="drinks-3">★</label>
+                <input type="radio" id="drinks-2" name="drinks" value="2"><label for="drinks-2">★</label>
+                <input type="radio" id="drinks-1" name="drinks" value="1"><label for="drinks-1">★</label>
               </div>
             </div>
-
-            <div class="section-title">O que você deseja avaliar?</div>
-            <div class="choice-grid">
-              <label class="choice-card">
-                <input type="radio" name="reviewTarget" value="barbearia" required>
-                <div class="choice-card-body">
-                  <div class="choice-icon">
-                    <img src="../favicon/content_cut.png" alt="Ícone de tesoura" title="Ícone de tesoura">
-                  </div>
-                  <div>
-                    <h3>Barbearia</h3>
-                    <p>Corte, barba e atendimento de grooming.</p>
-                  </div>
-                </div>
-              </label>
-
-              <label class="choice-card">
-                <input type="radio" name="reviewTarget" value="lounge" required>
-                <div class="choice-card-body">
-                  <div class="choice-icon">
-                    <img src="../favicon/local_bar.png" alt="Ícone de bebidas" title="Ícone de bebidas">
-                  </div>
-                  <div>
-                    <h3>Bar & Lounge</h3>
-                    <p>Drinks, ambiente e experiência social.</p>
-                  </div>
-                </div>
-              </label>
+            <div class="rating-card">
+              <h2>Atmosfera</h2>
+              <div class="star-rating">
+                <input type="radio" id="atmosfera-5" name="atmosfera" value="5"><label for="atmosfera-5">★</label>
+                <input type="radio" id="atmosfera-4" name="atmosfera" value="4"><label for="atmosfera-4">★</label>
+                <input type="radio" id="atmosfera-3" name="atmosfera" value="3"><label for="atmosfera-3">★</label>
+                <input type="radio" id="atmosfera-2" name="atmosfera" value="2"><label for="atmosfera-2">★</label>
+                <input type="radio" id="atmosfera-1" name="atmosfera" value="1"><label for="atmosfera-1">★</label>
+              </div>
             </div>
+            <div class="rating-card">
+              <h2>Serviço</h2>
+              <div class="star-rating">
+                <input type="radio" id="servico-5" name="servico" value="5"><label for="servico-5">★</label>
+                <input type="radio" id="servico-4" name="servico" value="4"><label for="servico-4">★</label>
+                <input type="radio" id="servico-3" name="servico" value="3"><label for="servico-3">★</label>
+                <input type="radio" id="servico-2" name="servico" value="2"><label for="servico-2">★</label>
+                <input type="radio" id="servico-1" name="servico" value="1"><label for="servico-1">★</label>
+              </div>
+            </div>
+            <div class="rating-card">
+              <h2>Música & conforto</h2>
+              <div class="star-rating">
+                <input type="radio" id="musica-5" name="musica" value="5"><label for="musica-5">★</label>
+                <input type="radio" id="musica-4" name="musica" value="4"><label for="musica-4">★</label>
+                <input type="radio" id="musica-3" name="musica" value="3"><label for="musica-3">★</label>
+                <input type="radio" id="musica-2" name="musica" value="2"><label for="musica-2">★</label>
+                <input type="radio" id="musica-1" name="musica" value="1"><label for="musica-1">★</label>
+              </div>
+            </div>
+            <div class="form-group full-width">
+              <label for="lounge-comments">Observações</label>
+              <textarea id="lounge-comments" class="input-padrao" rows="6" placeholder="Conte como foi sua experiência..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit">Enviar Avaliação</button>
+            </form>
 
-            <button type="submit" class="btn btn-primary btn-continue" disabled>Continuar</button>
-          </form>
+            <aside class="review-aside">
+              <div class="aside-media">
+                <div class="aside-large">
+                  <img src="../imagens/galeria/bar1.jpg" alt="Cocktail" />
+                </div>
+                <div class="aside-small-grid">
+                  <img src="../imagens/galeria/bar2.jpg" alt="Interior" />
+                  <img src="../imagens/galeria/bar3.jpg" alt="Drink" />
+                </div>
+              </div>
+
+              <div class="info-card">
+                <h3>Midnight Loyalty</h3>
+                <p>Avaliações completas garantem 10% de desconto na sua próxima rodada de coquetéis exclusivos.</p>
+              </div>
+            </aside>
+          </div>
         </section>
       </main>
-
               <div class="footer-newsletter">
           <p class="footer-newsletter-title">Fique por dentro das novidades</p>
           <form class="footer-newsletter-form" onsubmit="return false;">
@@ -135,7 +150,6 @@
       </footer>
     </div>
   </div>
-
   <script src="../js/main.js"></script>
   <script src="../js/avaliar.js"></script>
 </body>

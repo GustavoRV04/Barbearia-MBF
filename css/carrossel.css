@@ -18,7 +18,6 @@
 .carrossel-wrapper {
     position: relative;
     width: 100%;
-    /* Formato mais "quadrado" para telemóveis, para mostrar a maior parte da foto */
     aspect-ratio: 4 / 3; 
     max-height: 600px;
     border-radius: var(--border-radius-md, 0.75rem);
@@ -47,7 +46,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center; /* Volta a focar no centro */
+    object-position: center; /* focar no centro */
 }
 
 /* --- 3. HUD sempre visível --- */
@@ -57,7 +56,7 @@
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 12px; /* Aumentado o espaço entre os pontos */
+    gap: 12px; 
     z-index: 999;
     background: rgba(1, 16, 24, 0.7);
     padding: 10px 16px; /* Área de fundo maior */
@@ -65,7 +64,7 @@
 }
 
 .hud-dot {
-    width: 10px; /* Aumentado de 8px para 10px no mobile */
+    width: 10px;
     height: 10px;
     border-radius: 50%; /* Mantém o padrão de formas arredondadas do Design System */
     background-color: var(--secondary-text, #c3c7ca);
@@ -85,35 +84,31 @@
     opacity: 1;
 }
 
-/* --- Media Queries (Tablet e Desktop) --- */
+/* --- Media Queries (Desktop) --- */
 @media (min-width: 768px) {
     .carrossel-wrapper {
-        /* Um formato ligeiramente mais alto (16:10) para dar espaço vertical à foto */
-        aspect-ratio: 16 / 10; 
+        aspect-ratio: 21 / 9; 
         
-        /* Aumentamos a altura máxima para 720px para não esmagar a imagem em monitores grandes */
-        max-height: 720px; 
+        max-height: 500px; 
     }
 
     .carrossel-slide img {
-        /* Desloca o foco da imagem para 25% do topo (ajuda muito a não cortar rostos e cortes de cabelo) */
         object-position: center 25%; 
     }
 
     .carrossel-hud {
         gap: 16px;
         padding: 12px 24px;
-        bottom: 32px; /* Afasta um pouco mais da borda em telas grandes */
+        bottom: 32px;
     }
 
     .hud-dot {
-        width: 14px; /* Pontos muito maiores no computador */
+        width: 14px;
         height: 14px;
     }
 
     .hud-dot.active {
-        width: 44px; /* Pílula ativa muito mais larga para destaque */
+        width: 44px;
         border-radius: 8px;
     }
-    
 }

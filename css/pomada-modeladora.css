@@ -1,0 +1,588 @@
+/* Página Pomada Modeladora */
+
+.produto-detalhe-page {
+  display: grid;
+  gap: 28px;
+}
+
+/* Botão volta no topbar */
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent, #44dfed);
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+  margin-bottom: 4px;
+}
+.btn-voltar:hover { opacity: 1; }
+
+/*Hero*/
+.produto-hero {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 36px;
+  padding: 32px;
+  align-items: start;
+}
+
+.produto-hero-imagem {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.produto-hero-imagem img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  display: block;
+  padding: 20px;
+}
+
+.produto-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--accent, #44dfed);
+  color: #00363b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.produto-hero-info {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.produto-hero-info h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.produto-avaliacao-resumo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.estrelas-fixas {
+  color: #f4c84a;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+.avaliacao-nota {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.avaliacao-total {
+  font-size: 0.85rem;
+  color: var(--muted, #8d9194);
+}
+
+.produto-descricao-longa {
+  font-size: 0.97rem;
+  line-height: 1.75;
+  color: var(--muted, #c3c7ca);
+  margin: 0;
+}
+
+.produto-destaques {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.produto-destaques li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text, #d4e5f0);
+}
+
+.produto-destaques li svg {
+  color: var(--accent, #44dfed);
+  flex-shrink: 0;
+}
+
+.produto-compra {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.produto-preco-bloco {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.produto-preco-label {
+  font-size: 0.78rem;
+  color: var(--muted, #8d9194);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.produto-preco-valor {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent, #44dfed);
+  line-height: 1;
+}
+
+.produto-preco-unidade {
+  font-size: 0.8rem;
+  color: var(--muted, #8d9194);
+}
+
+.produto-compra-acoes {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex: 1;
+}
+
+.btn-grande {
+  height: 48px;
+  padding: 0 24px;
+  font-size: 0.95rem;
+}
+
+.btn-grande.btn-favorite {
+  width: 48px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Abas */
+.produto-tabs-section {
+  padding: 28px 32px;
+}
+
+.produto-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.produto-tab {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--muted, #8d9194);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.produto-tab.ativo,
+.produto-tab:hover {
+  color: var(--accent, #44dfed);
+  border-bottom-color: var(--accent, #44dfed);
+}
+
+.produto-tab-content {
+  display: none;
+}
+.produto-tab-content.ativo {
+  display: block;
+}
+
+.tab-intro {
+  margin-bottom: 16px;
+  color: var(--muted, #c3c7ca);
+  font-size: 0.95rem;
+}
+
+.ingredientes-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.ingredientes-lista li {
+  font-size: 0.93rem;
+  color: var(--text, #d4e5f0);
+  padding-left: 14px;
+  border-left: 2px solid var(--accent, #44dfed);
+  line-height: 1.6;
+}
+
+.ingredientes-lista strong {
+  color: var(--text, #d4e5f0);
+}
+
+.tab-aviso {
+  font-size: 0.8rem;
+  color: var(--muted, #8d9194);
+  font-style: italic;
+}
+
+.modo-uso-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.modo-uso-lista li {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.passo-numero {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(68, 223, 237, 0.12);
+  border: 1px solid rgba(68, 223, 237, 0.3);
+  color: var(--accent, #44dfed);
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modo-uso-lista strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+  color: var(--text, #d4e5f0);
+}
+
+.modo-uso-lista p {
+  font-size: 0.88rem;
+  color: var(--muted, #8d9194);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.ficha-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.ficha-tabela tr:not(:last-child) {
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.ficha-tabela th {
+  text-align: left;
+  padding: 12px 16px 12px 0;
+  color: var(--muted, #8d9194);
+  font-weight: 600;
+  width: 40%;
+}
+
+.ficha-tabela td {
+  padding: 12px 0;
+  color: var(--text, #d4e5f0);
+}
+
+/* Barras de avaliação */
+.depoimentos-barra-resumo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 200px;
+}
+
+.barra-linha {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--muted, #8d9194);
+}
+
+.barra-linha span:first-child {
+  width: 20px;
+  text-align: right;
+}
+
+.barra-bg {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.barra-fill {
+  height: 100%;
+  background: var(--accent, #44dfed);
+  border-radius: 4px;
+}
+
+.barra-linha span:last-child {
+  width: 30px;
+}
+
+/* --- Formulário de avaliação --- */
+.avaliacao-form-bloco {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.avaliacao-form-titulo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text, #d4e5f0);
+}
+
+.avaliacao-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 520px;
+}
+
+.avaliacao-form-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.avaliacao-form-campo label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted, #8d9194);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.avaliacao-form input[type="text"],
+.avaliacao-form textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: var(--text, #d4e5f0);
+  font-size: 0.92rem;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.avaliacao-form input:focus,
+.avaliacao-form textarea:focus {
+  border-color: var(--accent, #44dfed);
+}
+
+.estrelas-interativas {
+  display: flex;
+  gap: 6px;
+}
+
+.estrela {
+  font-size: 1.8rem;
+  color: rgba(255,255,255,0.15);
+  cursor: pointer;
+  transition: color 0.15s, transform 0.1s;
+  user-select: none;
+}
+
+.estrela.hover,
+.estrela.selecionada {
+  color: #f4c84a;
+}
+
+.estrela:hover {
+  transform: scale(1.15);
+}
+
+.avaliacao-form-feedback {
+  font-size: 0.9rem;
+  color: var(--accent, #44dfed);
+  font-weight: 600;
+}
+
+/* --- Produtos relacionados --- */
+.relacionados-section {
+  padding: 30px;
+}
+
+.relacionados-titulo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* ============================
+   Tema claro
+   ============================ */
+body.light .produto-hero-imagem {
+  background: #f4f7f9;
+  border-color: #dde4e8;
+}
+
+body.light .produto-badge {
+  background: #2d90a8;
+  color: #fff;
+}
+
+body.light .produto-hero-info h2,
+body.light .produto-destaques li,
+body.light .ingredientes-lista li,
+body.light .ingredientes-lista strong,
+body.light .modo-uso-lista strong,
+body.light .ficha-tabela td,
+body.light .avaliacao-form-titulo,
+body.light .relacionados-titulo {
+  color: #102a35;
+}
+
+body.light .produto-descricao-longa,
+body.light .produto-avaliacao-resumo .avaliacao-total,
+body.light .tab-intro,
+body.light .tab-aviso,
+body.light .modo-uso-lista p,
+body.light .ficha-tabela th,
+body.light .avaliacao-form-campo label,
+body.light .barra-linha {
+  color: #5c7480;
+}
+
+body.light .produto-preco-valor {
+  color: #2d90a8;
+}
+
+body.light .produto-destaques li svg {
+  color: #2d90a8;
+}
+
+body.light .produto-tab {
+  color: #5c7480;
+}
+body.light .produto-tab.ativo,
+body.light .produto-tab:hover {
+  color: #2d90a8;
+  border-bottom-color: #2d90a8;
+}
+
+body.light .produto-tabs {
+  border-bottom-color: #dde4e8;
+}
+
+body.light .produto-compra {
+  border-top-color: #dde4e8;
+}
+
+body.light .ingredientes-lista li {
+  border-left-color: #2d90a8;
+}
+
+body.light .passo-numero {
+  background: rgba(45,144,168,0.1);
+  border-color: rgba(45,144,168,0.3);
+  color: #2d90a8;
+}
+
+body.light .ficha-tabela tr {
+  border-bottom-color: #e8edf0;
+}
+
+body.light .barra-bg {
+  background: #dde4e8;
+}
+
+body.light .barra-fill {
+  background: #2d90a8;
+}
+
+body.light .avaliacao-form-bloco {
+  border-top-color: #dde4e8;
+}
+
+body.light .avaliacao-form input[type="text"],
+body.light .avaliacao-form textarea {
+  background: #fff;
+  border-color: #cdd7dc;
+  color: #102a35;
+}
+
+body.light .avaliacao-form input:focus,
+body.light .avaliacao-form textarea:focus {
+  border-color: #2d90a8;
+}
+
+body.light .estrela {
+  color: #cdd7dc;
+}
+
+body.light .avaliacao-form-feedback {
+  color: #2d90a8;
+}
+
+body.light .btn-voltar {
+  color: #2d90a8;
+}
+
+/* ============================
+   Responsivo mobile
+   ============================ */
+@media (max-width: 860px) {
+  .produto-hero {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 24px;
+  }
+
+  .produto-tabs-section {
+    padding: 20px;
+  }
+
+  .depoimentos-header {
+    flex-direction: column !important;
+    gap: 20px;
+  }
+
+  .depoimentos-barra-resumo {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .produto-compra {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .produto-compra-acoes {
+    width: 100%;
+  }
+}

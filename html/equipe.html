@@ -13,95 +13,128 @@
 </head>
 <body>
 
-    <div id="sidebar-container"></div>
+    <div class="layout">
+        <div id="sidebar-container"></div>
 
-    <div class="topbar-actions">
-        <button class="icon-button sidebar-toggle" type="button" aria-label="Abrir ou fechar menu">
-            <img src="../favicon/menu.png" alt="Abrir menu">
-        </button>
-        <button class="icon-button theme-toggle" type="button" aria-label="Alternar tema">
-            <img src="../favicon/sunny.png" alt="Alternar tema">
-        </button>
+        <div class="content-area">
+            <header class="topbar">
+                <div class="page-title">
+                    <h1>Os Mestres por Trás da Experiência</h1>
+                    <p>Unimos a precisão da barbearia clássica à sofisticação da coquetelaria moderna. Conheça os especialistas que transformam cada visita em um momento único.</p>
+                </div>
+                <div class="topbar-actions">
+                    <button class="icon-button sidebar-toggle" type="button" aria-label="Abrir ou fechar menu">
+                        <img src="../favicon/menu.png" alt="Abrir menu">
+                    </button>
+                    <button class="icon-button theme-toggle" type="button" aria-label="Alternar tema">
+                        <img src="../favicon/sunny.png" alt="Alternar tema">
+                    </button>
+                </div>
+            </header>
+
+            <main class="page-main content">
+                <!-- Secção Barbearia -->
+                <section class="team-section">
+                    <h2 class="headline-md">✂ Barbearia</h2>
+                    <div class="cards-grid">
+                        <div class="card">
+                            <img src="../imagens/equipe/ricardo.png" alt="Ricardo, Master Barber" class="card-image">
+                            <div class="card-body">
+                                <h3 class="headline-mobile">Ricardo</h3>
+                                <span class="role-label">Barbeiro & Sócio</span>
+                                <p class="body-md">Com mais de 15 anos de experiência, Ricardo é especialista em cortes clássicos com toalha quente e finalização com navalha.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../imagens/equipe/alexandre.png" alt="Alexandre, Senior Groomer" class="card-image">
+                            <div class="card-body">
+                                <h3 class="headline-mobile">Alexandre</h3>
+                                <span class="role-label">Barbeiro</span>
+                                <p class="body-md">Especialista em visagismo e barboterapia. Alexandre foca no detalhamento e na saúde capilar de cada cliente.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../imagens/equipe/bruno.png" alt="Bruno, Fade Specialist" class="card-image">
+                            <div class="card-body">
+                                <h3 class="headline-mobile">Bruno</h3>
+                                <span class="role-label">Barbeiro</span>
+                                <p class="body-md">Referência em degradês modernos e técnicas de textura, Bruno traz o contemporâneo para a cadeira da Midnight.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sessão Lounge & Bar -->
+                <section class="team-section">
+                    <h2 class="headline-md">🍸 Lounge & Bar</h2>
+                    <div class="cards-grid">
+                        <div class="card">
+                            <img src="../imagens/equipe/marco.png" alt="Marco, Lead Mixologist" class="card-image">
+                            <div class="card-body">
+                                <h3 class="headline-mobile">Marco</h3>
+                                <span class="role-label">Mestre dos Coquetéis</span>
+                                <p class="body-md">Criador da nossa carta exclusiva de coquetéis. Marco combina sabores clássicos com técnicas de defumação e infusões próprias.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../imagens/equipe/henrique.png" alt="Henrique, Senior Mixologist" class="card-image">
+                            <div class="card-body">
+                                <h3 class="headline-mobile">Henrique</h3>
+                                <span class="role-label">Barman & Sócio</span>
+                                <p class="body-md">Criador da nossa carta exclusiva de coquetéis. Marco combina sabores clássicos com técnicas de defumação e infusões próprias.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../imagens/equipe/felipe.png" alt="Felipe, Cantor e DJ" class="card-image">
+                            <div class="card-body">
+                                <h3 class="headline-mobile">Felipe</h3>
+                                <span class="role-label">Barman & cantor</span>
+                                <p class="body-md">Criador da nossa carta exclusiva de coquetéis. Marco combina sabores clássicos com técnicas de defumação e infusões próprias.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <div class="footer-newsletter">
+                <p class="footer-newsletter-title">Fique por dentro das novidades</p>
+                <form class="footer-newsletter-form" onsubmit="return false;">
+                    <input type="email" class="footer-newsletter-input" placeholder="Seu e-mail" aria-label="E-mail para newsletter" required>
+                    <button type="submit" class="footer-newsletter-btn">Assinar</button>
+                </form>
+            </div>
+
+            <footer class="footer">
+                <a href="index.html">
+                    <img src="../imagens/logo_branco.png" alt="Logo branco Gu-Barber">
+                </a>
+                <div class="footer-center">
+                    <a href="avaliar.html" class="footer-link">Avalie-nos</a>
+                    <a href="agendamento.html" class="footer-link">Marcar Horário</a>
+                    <p class="copy">&copy; copyright Gu-Barber Shop - 2026</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram da barbearia">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook da barbearia">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/5551999999999" target="_blank" aria-label="WhatsApp da barbearia">
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                            <path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4a8.94 8.94 0 0 0-7.74 13.4L3 21l3.7-1.27a8.93 8.93 0 0 0 4.31 1.1h.04a8.94 8.94 0 0 0 8.93-8.9 8.83 8.83 0 0 0-2.38-5.61zm-5.55 13.7h-.03a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.81.97.94-2.73-.18-.28a7.44 7.44 0 0 1-1.14-3.95 7.45 7.45 0 0 1 12.7-5.27 7.36 7.36 0 0 1 2.17 5.24 7.45 7.45 0 0 1-7.6 7.22zm4.08-5.58c-.22-.11-1.31-.65-1.51-.72-.2-.08-.35-.11-.5.11-.15.22-.57.72-.7.87-.13.15-.26.16-.48.05a6.06 6.06 0 0 1-1.78-1.1 6.7 6.7 0 0 1-1.23-1.53c-.13-.22-.01-.34.11-.45.11-.11.25-.28.37-.42a.55.55 0 0 0 .09-.55c-.05-.11-.5-1.2-.69-1.65-.18-.43-.36-.37-.5-.37-.13 0-.28-.01-.43-.01a.83.83 0 0 0-.6.28 2.52 2.52 0 0 0-.79 1.88c0 1.11.81 2.18.92 2.33.11.15 1.57 2.4 3.8 3.27 1.86.73 2.24.59 2.65.55.4-.04 1.31-.54 1.49-1.06.18-.52.18-.96.13-1.06-.05-.1-.2-.16-.42-.27z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </footer>
+        </div>
     </div>
-
-
-    <!-- Conteúdo Principal -->
-    <main class="content">
-        <header class="page-header">
-            <h1 class="display-lg">Os Mestres por Trás da Experiência</h1>
-            <p class="body-lg">Unimos a precisão da barbearia clássica à sofisticação da coquetelaria moderna. Conheça os especialistas que transformam cada visita em um momento único.</p>
-        </header>
-
-        <!-- Secção Barbearia -->
-        <section class="team-section">
-            <h2 class="headline-md">✂ Barbearia</h2>
-            <div class="cards-grid">
-                <!-- Cartão Ricardo -->
-                <div class="card">
-                    <img src="../imagens/equipe/ricardo.png" alt="Ricardo, Master Barber" class="card-image">
-                    <div class="card-body">
-                        <h3 class="headline-mobile">Ricardo</h3>
-                        <span class="role-label">Barbeiro & Sócio</span>
-                        <p class="body-md">Com mais de 15 anos de experiência, Ricardo é especialista em cortes clássicos com toalha quente e finalização com navalha.</p>
-                    </div>
-                </div>
-                <!-- Cartão Alexandre -->
-                <div class="card">
-                    <img src="../imagens/equipe/alexandre.png" alt="Alexandre, Senior Groomer" class="card-image">
-                    <div class="card-body">
-                        <h3 class="headline-mobile">Alexandre</h3>
-                        <span class="role-label">Barbeiro</span>
-                        <p class="body-md">Especialista em visagismo e barboterapia. Alexandre foca no detalhamento e na saúde capilar de cada cliente.</p>
-                    </div>
-                </div>
-                 <!-- Cartão Bruno -->
-                 <div class="card">
-                    <img src="../imagens/equipe/bruno.png" alt="Bruno, Fade Specialist" class="card-image">
-                    <div class="card-body">
-                        <h3 class="headline-mobile">Bruno</h3>
-                        <span class="role-label">Barbeiro</span>
-                        <p class="body-md">Referência em degradês modernos e técnicas de textura, Bruno traz o contemporâneo para a cadeira da Midnight.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sessão Lounge & Bar -->
-        <section class="team-section">
-            <h2 class="headline-md">🍸 Lounge & Bar</h2>
-            <div class="cards-grid">
-                <!-- Cartão Marco -->
-                <div class="card">
-                    <img src="../imagens/equipe/marco.png" alt="Marco, Lead Mixologist" class="card-image">
-                    <div class="card-body">
-                        <h3 class="headline-mobile">Marco</h3>
-                        <span class="role-label">Mestre dos Coquetéis</span>
-                        <p class="body-md">Criador da nossa carta exclusiva de coquetéis. Marco combina sabores clássicos com técnicas de defumação e infusões próprias.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../imagens/equipe/henrique.png" alt="Henrique, Senior Mixologist" class="card-image">
-                    <div class="card-body">
-                        <h3 class="headline-mobile">Henrique</h3>
-                        <span class="role-label">Barman & Sócio</span>
-                        <p class="body-md">Criador da nossa carta exclusiva de coquetéis. Marco combina sabores clássicos com técnicas de defumação e infusões próprias.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../imagens/equipe/felipe.png" alt="Felipe, Cantor e DJ" class="card-image">
-                    <div class="card-body">
-                        <h3 class="headline-mobile">Felipe</h3>
-                        <span class="role-label">Barman & cantor</span>
-                        <p class="body-md">Criador da nossa carta exclusiva de coquetéis. Marco combina sabores clássicos com técnicas de defumação e infusões próprias.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    
-
     <script src="../js/main.js"></script>
-
 </body>
 </html>

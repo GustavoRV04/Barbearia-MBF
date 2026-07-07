@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const services = { corte:45, barba:30, combo:90 };
 
-  // static staff (match equipe.html)
   const staff = [ 'Ricardo', 'Alexandre', 'Bruno' ];
 
   let viewDate = new Date();
@@ -60,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const startIndex = firstDay.getDay(); // 0=domingo
     const daysInMonth = new Date(year, month+1, 0).getDate();
 
-    // fill previous month blanks
     for(let i=0;i<startIndex;i++){
       const empty = document.createElement('div');
       empty.className = 'day disabled';
@@ -73,10 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.className = 'day';
       btn.textContent = d;
 
-      // disable Sundays
       if(date.getDay() === 0){ btn.classList.add('disabled'); btn.disabled = true; }
 
-      // mark today
       const today = new Date();
       if(date.toDateString() === today.toDateString()) btn.classList.add('today');
 
@@ -86,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function selectDay(date, btnEl){
-    // clear prev selection
     const prev = daysEl.querySelector('.day.selected'); if(prev) prev.classList.remove('selected');
     btnEl.classList.add('selected');
     selected.date = date;
@@ -97,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderStaffAvailability(date);
   }
 
-  // generate 30-min slot times from 08:00 to 19:30
   function generateSlots(){
     const slots = [];
     for(let h=8; h<=19; h++){

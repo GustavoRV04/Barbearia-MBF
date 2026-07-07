@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Pomada Modeladora — Gu-Barber</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../imagens/man-5463556_640.png" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="../css/reset.css">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/produtos.css">
+  <link rel="stylesheet" type="text/css" href="../css/pomada-modeladora.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="layout">
+    <div id="sidebar-container"></div>
+
+    <div class="content-area">
+      <header class="topbar">
+        <div class="page-title">
+          <a href="produtos.html" class="btn-voltar" aria-label="Voltar para Produtos">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            Produtos
+          </a>
+          <h1>Pomada Modeladora</h1>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-button sidebar-toggle" type="button" aria-label="Abrir ou fechar menu">
+            <img src="../favicon/menu.png" alt="Abrir menu">
+          </button>
+          <button class="icon-button theme-toggle" type="button" aria-label="Alternar tema">
+            <img src="../favicon/sunny.png" alt="Alternar tema">
+          </button>
+          <button class="icon-button cart-button" type="button" aria-label="Carrinho">
+            <img src="../favicon/shopping_cart.png" alt="Carrinho" class="cart-icon-img">
+            <span class="cart-badge" id="cart-count">0</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="page-main produto-detalhe-page">
+
+        <!-- Hero: imagem + info principal -->
+        <section class="produto-hero card">
+          <div class="produto-hero-imagem">
+            <img src="../imagens/produtosimg/prod1.png" alt="Pomada Modeladora Gu-Barber" id="imagem-principal">
+            <div class="produto-badge">Mais Vendido</div>
+          </div>
+          <div class="produto-hero-info">
+            <span class="eyebrow">Barbearia · Cabelo</span>
+            <h2>Pomada Modeladora</h2>
+            <div class="produto-avaliacao-resumo">
+              <span class="estrelas-fixas">★★★★★</span>
+              <span class="avaliacao-nota">4,8</span>
+              <span class="avaliacao-total">(47 avaliações)</span>
+            </div>
+            <p class="produto-descricao-longa">
+              A Pomada Modeladora Gu-Barber foi desenvolvida em parceria com os barbeiros da casa para entregar
+              fixação média com acabamento natural. Ideal para cortes modernos, texturizados e degradês,
+              ela mantém o estilo por horas sem ressecar o fio. Fórmula leve, fácil de lavar e com aroma amadeirado suave.
+            </p>
+
+            <ul class="produto-destaques">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Fixação média com acabamento natural
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Não resseca nem pesa no fio
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Fácil de lavar — sem resíduo
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Aroma amadeirado suave
+              </li>
+            </ul>
+
+            <div class="produto-compra">
+              <div class="produto-preco-bloco">
+                <span class="produto-preco-label">Preço</span>
+                <span class="produto-preco-valor">R$ 39,90</span>
+                <span class="produto-preco-unidade">/ 100g</span>
+              </div>
+              <div class="produto-compra-acoes">
+                <button class="btn btn-favorite btn-grande" type="button" aria-label="Favoritar produto">
+                  <img src="../favicon/favorite.png" alt="Favorito" class="cart-icon-img">
+                </button>
+                <button class="btn btn-primary btn-add-cart btn-grande" type="button"
+                  data-product-id="barb-01"
+                  data-product-name="Pomada Modeladora"
+                  data-product-price="39.90">
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Informações detalhadas em abas -->
+        <section class="produto-tabs-section card">
+          <div class="produto-tabs" role="tablist">
+            <button class="produto-tab ativo" role="tab" data-tab="ingredientes">Ingredientes</button>
+            <button class="produto-tab" role="tab" data-tab="modo-de-uso">Modo de Uso</button>
+            <button class="produto-tab" role="tab" data-tab="ficha-tecnica">Ficha Técnica</button>
+          </div>
+
+          <div class="produto-tab-content ativo" id="tab-ingredientes">
+            <p class="tab-intro">Formulado com ingredientes selecionados para cuidar do fio enquanto modela:</p>
+            <ul class="ingredientes-lista">
+              <li><strong>Cera de abelha</strong> — fixação natural e maleável, sem efeito plástico.</li>
+              <li><strong>Manteiga de karité</strong> — hidratação profunda, evita ressecamento.</li>
+              <li><strong>Óleo de argan</strong> — brilho controlado e proteção térmica leve.</li>
+              <li><strong>Extrato de bambu</strong> — fortalece a estrutura do fio.</li>
+              <li><strong>Fragrância amadeirada</strong> — aroma exclusivo da linha Gu-Barber.</li>
+            </ul>
+            <p class="tab-aviso">Livre de parabenos e sulfatos. Testado dermatologicamente.</p>
+          </div>
+
+          <div class="produto-tab-content" id="tab-modo-de-uso">
+            <ol class="modo-uso-lista">
+              <li>
+                <span class="passo-numero">01</span>
+                <div>
+                  <strong>Seque o cabelo</strong>
+                  <p>Aplique com o cabelo seco ou levemente úmido para melhor distribuição.</p>
+                </div>
+              </li>
+              <li>
+                <span class="passo-numero">02</span>
+                <div>
+                  <strong>Retire uma pequena quantidade</strong>
+                  <p>Uma quantidade do tamanho de uma ervilha já é suficiente para a maioria dos cortes.</p>
+                </div>
+              </li>
+              <li>
+                <span class="passo-numero">03</span>
+                <div>
+                  <strong>Espalhe entre as mãos</strong>
+                  <p>Aqueça o produto entre as palmas para amolecer e distribuir de maneira uniforme.</p>
+                </div>
+              </li>
+              <li>
+                <span class="passo-numero">04</span>
+                <div>
+                  <strong>Modele como desejar</strong>
+                  <p>Passe pelos fios da raiz às pontas no sentido do penteado desejado.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="produto-tab-content" id="tab-ficha-tecnica">
+            <table class="ficha-tabela">
+              <tbody>
+                <tr><th>Peso líquido</th><td>100g</td></tr>
+                <tr><th>Fixação</th><td>Média</td></tr>
+                <tr><th>Acabamento</th><td>Natural / fosco</td></tr>
+                <tr><th>Indicado para</th><td>Todos os tipos de cabelo</td></tr>
+                <tr><th>Validade</th><td>24 meses após abertura</td></tr>
+                <tr><th>Origem</th><td>Fabricado no Brasil</td></tr>
+                <tr><th>Registro Anvisa</th><td>8000000000000</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Seção de depoimentos -->
+        <section class="depoimentos-section card">
+          <div class="depoimentos-header">
+            <div>
+              <h2 class="depoimentos-titulo">Avaliações dos clientes</h2>
+              <p class="depoimentos-subtitulo">47 avaliações verificadas · média 4,8 de 5</p>
+            </div>
+            <div class="depoimentos-barra-resumo">
+              <div class="barra-linha"><span>5★</span><div class="barra-bg"><div class="barra-fill" style="width:78%"></div></div><span>78%</span></div>
+              <div class="barra-linha"><span>4★</span><div class="barra-bg"><div class="barra-fill" style="width:14%"></div></div><span>14%</span></div>
+              <div class="barra-linha"><span>3★</span><div class="barra-bg"><div class="barra-fill" style="width:5%"></div></div><span>5%</span></div>
+              <div class="barra-linha"><span>2★</span><div class="barra-bg"><div class="barra-fill" style="width:2%"></div></div><span>2%</span></div>
+              <div class="barra-linha"><span>1★</span><div class="barra-bg"><div class="barra-fill" style="width:1%"></div></div><span>1%</span></div>
+            </div>
+          </div>
+
+          <div class="depoimentos-grid">
+            <article class="depoimento-card">
+              <div class="depoimento-estrelas">★★★★★</div>
+              <p class="depoimento-texto">"Melhor pomada que já usei. Fixação perfeita o dia todo sem deixar o cabelo ressecado. Vale cada centavo."</p>
+              <div class="depoimento-autor">
+                <span class="depoimento-nome">Rafael S.</span>
+                <span class="depoimento-produto">Compra verificada · Junho 2026</span>
+              </div>
+            </article>
+            <article class="depoimento-card">
+              <div class="depoimento-estrelas">★★★★★</div>
+              <p class="depoimento-texto">"Uso depois do corte aqui na Gu-Barber e já levo pra casa. O cheiro é incrível e o acabamento fica natural, nunca plástico."</p>
+              <div class="depoimento-autor">
+                <span class="depoimento-nome">Lucas A.</span>
+                <span class="depoimento-produto">Compra verificada · Maio 2026</span>
+              </div>
+            </article>
+            <article class="depoimento-card">
+              <div class="depoimento-estrelas">★★★★☆</div>
+              <p class="depoimento-texto">"Muito bom para o meu cabelo liso. Gostaria que tivesse uma versão de fixação forte também, mas para o dia a dia é perfeito."</p>
+              <div class="depoimento-autor">
+                <span class="depoimento-nome">Mateus R.</span>
+                <span class="depoimento-produto">Compra verificada · Maio 2026</span>
+              </div>
+            </article>
+            <article class="depoimento-card">
+              <div class="depoimento-estrelas">★★★★★</div>
+              <p class="depoimento-texto">"Passei a usar exclusivamente essa pomada. Lava fácil, não deixa resíduo e o cabelo fica hidratado. Recomendo a todos."</p>
+              <div class="depoimento-autor">
+                <span class="depoimento-nome">Felipe C.</span>
+                <span class="depoimento-produto">Compra verificada · Abril 2026</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- Formulário: deixe sua avaliação -->
+          <div class="avaliacao-form-bloco">
+            <h3 class="avaliacao-form-titulo">Deixe sua avaliação</h3>
+            <form class="avaliacao-form" onsubmit="enviarAvaliacao(event)">
+              <div class="avaliacao-form-campo">
+                <label for="aval-nome">Nome</label>
+                <input type="text" id="aval-nome" placeholder="Seu nome" required>
+              </div>
+              <div class="avaliacao-form-campo">
+                <label>Nota</label>
+                <div class="estrelas-interativas" id="estrelas-interativas" role="group" aria-label="Selecione sua nota de 1 a 5">
+                  <span class="estrela" data-valor="1" tabindex="0" role="radio" aria-label="1 estrela">★</span>
+                  <span class="estrela" data-valor="2" tabindex="0" role="radio" aria-label="2 estrelas">★</span>
+                  <span class="estrela" data-valor="3" tabindex="0" role="radio" aria-label="3 estrelas">★</span>
+                  <span class="estrela" data-valor="4" tabindex="0" role="radio" aria-label="4 estrelas">★</span>
+                  <span class="estrela" data-valor="5" tabindex="0" role="radio" aria-label="5 estrelas">★</span>
+                </div>
+                <input type="hidden" id="aval-nota" value="0">
+              </div>
+              <div class="avaliacao-form-campo">
+                <label for="aval-texto">Comentário</label>
+                <textarea id="aval-texto" placeholder="Conte sua experiência com o produto..." rows="3" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar avaliação</button>
+              <p class="avaliacao-form-feedback" id="aval-feedback" hidden>Obrigado pela sua avaliação!</p>
+            </form>
+          </div>
+        </section>
+
+        <!-- Produtos relacionados -->
+        <section class="relacionados-section card">
+          <h2 class="relacionados-titulo">Você também pode gostar</h2>
+          <div class="product-grid">
+            <article class="product-card" data-product-id="barb-02">
+              <div class="product-image">
+                <img src="../imagens/produtosimg/prodb2.png" alt="Óleo para barba">
+              </div>
+              <div class="product-item">
+                <h3>Óleo para Barba</h3>
+                <p>Hidratação leve e aroma amadeirado para manter a barba alinhada por horas.</p>
+                <div class="product-footer">
+                  <span class="product-price">R$ 49,90</span>
+                  <div class="product-actions">
+                    <button class="btn btn-favorite" type="button" aria-label="Favoritar produto">
+                      <img src="../favicon/favorite.png" alt="Favorito" class="cart-icon-img">
+                    </button>
+                    <button class="btn btn-primary btn-add-cart" type="button">Adicionar</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="product-card" data-product-id="barb-04">
+              <div class="product-image">
+                <img src="../imagens/produtosimg/prodb3.png" alt="Acessórios">
+              </div>
+              <div class="product-item">
+                <h3>Acessórios</h3>
+                <p>Pentes, tesouras e lâminas profissionais com acabamento de alta qualidade.</p>
+                <div class="product-footer">
+                  <span class="product-price">R$ 59,90</span>
+                  <div class="product-actions">
+                    <button class="btn btn-favorite" type="button" aria-label="Favoritar produto">
+                      <img src="../favicon/favorite.png" alt="Favorito" class="cart-icon-img">
+                    </button>
+                    <button class="btn btn-primary btn-add-cart" type="button">Adicionar</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="product-card" data-product-id="barb-03">
+              <div class="product-image">
+                <img src="../imagens/utensilios.jpg" alt="Kit Premium">
+              </div>
+              <div class="product-item">
+                <h3>Kit Premium</h3>
+                <p>Conjunto com escova, navalha e cera para acabamento perfeito em qualquer estilo.</p>
+                <div class="product-footer">
+                  <span class="product-price">R$ 89,90</span>
+                  <div class="product-actions">
+                    <button class="btn btn-favorite" type="button" aria-label="Favoritar produto">
+                      <img src="../favicon/favorite.png" alt="Favorito" class="cart-icon-img">
+                    </button>
+                    <button class="btn btn-primary btn-add-cart" type="button">Adicionar</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+      </main>
+
+      <div class="footer-newsletter">
+        <p class="footer-newsletter-title">Fique por dentro das novidades</p>
+        <form class="footer-newsletter-form" onsubmit="return false;">
+          <input type="email" class="footer-newsletter-input" placeholder="Seu e-mail" aria-label="E-mail para newsletter" required>
+          <button type="submit" class="footer-newsletter-btn">Assinar</button>
+        </form>
+      </div>
+
+      <footer class="footer">
+        <a href="index.html">
+          <img src="../imagens/logo_branco.png" alt="Logo branco Gu-Barber">
+        </a>
+        <div class="footer-center">
+          <a href="avaliar.html" class="footer-link">Avalie-nos</a>
+          <a href="agendamento.html" class="footer-link">Marcar Horário</a>
+          <p class="copy">&copy; copyright Gu-Barber Shop - 2026</p>
+        </div>
+        <div class="footer-socials">
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram da barbearia">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook da barbearia">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="https://wa.me/5551999999999" target="_blank" aria-label="WhatsApp da barbearia">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4a8.94 8.94 0 0 0-7.74 13.4L3 21l3.7-1.27a8.93 8.93 0 0 0 4.31 1.1h.04a8.94 8.94 0 0 0 8.93-8.9 8.83 8.83 0 0 0-2.38-5.61zm-5.55 13.7h-.03a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.81.97.94-2.73-.18-.28a7.44 7.44 0 0 1-1.14-3.95 7.45 7.45 0 0 1 12.7-5.27 7.36 7.36 0 0 1 2.17 5.24 7.45 7.45 0 0 1-7.6 7.22zm4.08-5.58c-.22-.11-1.31-.65-1.51-.72-.2-.08-.35-.11-.5.11-.15.22-.57.72-.7.87-.13.15-.26.16-.48.05a6.06 6.06 0 0 1-1.78-1.1 6.7 6.7 0 0 1-1.23-1.53c-.13-.22-.01-.34.11-.45.11-.11.25-.28.37-.42a.55.55 0 0 0 .09-.55c-.05-.11-.5-1.2-.69-1.65-.18-.43-.36-.37-.5-.37-.13 0-.28-.01-.43-.01a.83.83 0 0 0-.6.28 2.52 2.52 0 0 0-.79 1.88c0 1.11.81 2.18.92 2.33.11.15 1.57 2.4 3.8 3.27 1.86.73 2.24.59 2.65.55.4-.04 1.31-.54 1.49-1.06.18-.52.18-.96.13-1.06-.05-.1-.2-.16-.42-.27z"></path></svg>
+          </a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <div class="cart-panel" id="cart-panel">
+    <div class="cart-panel-content">
+      <div class="cart-panel-header">
+        <div>
+          <span class="eyebrow">Carrinho</span>
+          <h3>Seus itens</h3>
+        </div>
+        <button class="cart-panel-close" id="cart-close" type="button" aria-label="Fechar carrinho">×</button>
+      </div>
+      <div class="cart-panel-body" id="cart-items"></div>
+      <div class="cart-summary">
+        <span>Total</span>
+        <strong id="cart-total">R$ 0,00</strong>
+      </div>
+      <button class="btn btn-primary btn-checkout" id="checkout-button" type="button">Comprar</button>
+      <p class="checkout-message" id="checkout-message" hidden>Obrigado pela confiança</p>
+    </div>
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/produtos.js"></script>
+  <script src="../js/pomada.js"></script>
+</body>
+</html>
