@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     
     // 1. CARREGAR TEMA SALVO IMEDIATAMENTE (Para evitar flashes brancos)
-    // O seu CSS usa a classe 'light' e a chave 'site-theme' no localStorage
+    // CSS usa a classe 'light' e a chave 'site-theme' no localStorage
     if (localStorage.getItem('site-theme') === 'light') {
         document.body.classList.add('light'); 
     }
@@ -17,34 +17,34 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Marcar o link atual como ativo
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            const navLinks = document.querySelectorAll('.sidebar nav a'); // Ajustado para pegar o nav correto
+            const navLinks = document.querySelectorAll('.sidebar nav a'); // pegou o nav correto
             navLinks.forEach(link => {
                 if (link.getAttribute('href') === currentPage) {
-                    link.parentElement.classList.add('active'); // O CSS aplica o active no <li>, não no <a>
+                    link.parentElement.classList.add('active'); // CSS aplica o active no <li>, não no <a>
                 }
             });
 
             // 3. INICIAR FUNÇÕES DA SIDEBAR E TEMA
-            // Importante chamar o tema AQUI TAMBÉM para garantir que o logo da sidebar injetada seja atualizado
+            // Importante chamar o tema aq para garantir que o logo da sidebar injetada seja atualizado
             configurarInteracoesSidebar();
             configurarTema();
         })
         .catch(error => console.error(error));
 });
 
-// Função para Abrir/Fechar Sidebar
 function configurarInteracoesSidebar() {
-    // Procura o botão pela classe correta definida no index.html
     const btnToggleSidebar = document.querySelector('.sidebar-toggle'); 
 
     if (btnToggleSidebar) {
         btnToggleSidebar.addEventListener('click', () => {
-            // O seu style.css usa a classe 'sidebar-collapsed' aplicada no body
-            document.body.classList.toggle('sidebar-collapsed'); 
+            if (window.innerWidth >= 1180) {
+                document.body.classList.toggle('sidebar-collapsed'); // Desktop
+            } else {
+                document.body.classList.toggle('sidebar-open'); // Mobile
+            }
         });
     }
 }
-
 // Função para Alternar o Tema
 function configurarTema() {
     const btnToggleTema = document.querySelector('.theme-toggle');
@@ -56,7 +56,7 @@ function configurarTema() {
         if (document.body.classList.contains('light')) {
             if (imgToggleTema) imgToggleTema.src = '../favicon/dark.png'; // Mostra a lua no tema claro
             if (btnToggleTema) btnToggleTema.title = 'Alternar para tema escuro';
-            if (brandLogo) brandLogo.src = '../imagens/logo (2).png';
+            if (brandLogo) brandLogo.src = '../imagens/logo-2.png';
         } else {
             if (imgToggleTema) imgToggleTema.src = '../favicon/sunny.png'; // Mostra o sol no tema escuro
             if (btnToggleTema) btnToggleTema.title = 'Alternar para tema claro';
@@ -64,12 +64,12 @@ function configurarTema() {
         }
     };
 
-    // Garante que a UI esteja correta ao carregar a página
+    // Garante que a ui esteja correta ao carregar a página
     updateThemeUI(); 
 
     if (btnToggleTema) {
         btnToggleTema.addEventListener('click', () => {
-            // Alterna a classe 'light' no body (como o seu CSS espera)
+            // Alterna a classe 'light' no body
             document.body.classList.toggle('light');
             
             // Guarda a preferência no navegador
@@ -91,9 +91,9 @@ let carrosselTimer;
 // Função chamada para iniciar a troca automática
 function iniciarCarrossel() {
     const slides = document.querySelectorAll('.carrossel-slide');
-    if (slides.length === 0) return; // Se não houver carrossel na página, ignora
+    if (slides.length === 0) return; // Se não tem o carrossel na página, ignora
     
-    // Configura a troca a cada 5000 milissegundos (5 segundos)
+    // Configura a troca a cada 5 segundos
     carrosselTimer = setInterval(avancarSlide, 5000);
 }
 
@@ -131,10 +131,8 @@ window.mudarSlide = function(index) {
     carrosselTimer = setInterval(avancarSlide, 5000);
 }
 
-// Para garantir que o carrossel inicia quando a página carregar, 
-// certifique-se de adicionar a chamada da função no seu DOMContentLoaded existente, assim:
 document.addEventListener("DOMContentLoaded", function() {
-    // ... os seus códigos existentes da sidebar e tema ...
+    // ... códigos existentes da sidebar e tema ...
     
     iniciarCarrossel(); // Chama a inicialização do carrossel
 });

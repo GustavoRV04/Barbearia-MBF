@@ -21,9 +21,9 @@
       event.preventDefault();
       const selected = reviewRadios.find((radio) => radio.checked)?.value;
       if (selected === 'barbearia') {
-        window.location.href = 'avalBarbearia.html';
+        window.location.href = 'aval-barbearia.html';
       } else if (selected === 'lounge') {
-        window.location.href = 'avalLounge.html';
+        window.location.href = 'aval-lounge.html';
       }
     });
   }
@@ -33,7 +33,6 @@
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       const pageTitle = document.querySelector('.page-title h1')?.textContent?.trim() || 'Avaliação';
-      // if on barbearia page require a selected staff
       if (pageTitle.toLowerCase().includes('barbearia')) {
         const selected = document.querySelector('.staff-choices .card.selected');
         if (!selected) {
@@ -49,7 +48,6 @@
     });
   });
 
-  // Staff selection logic (on pages that include .staff-choices)
   const staffChoices = document.querySelectorAll('.staff-choices .card');
   if (staffChoices.length) {
     staffChoices.forEach((card) => {

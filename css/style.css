@@ -53,6 +53,11 @@ body.sidebar-collapsed .content-area {
   width: 100%;
 }
 
+/* Estado aberto do menu mobile */
+body.sidebar-open .sidebar {
+  transform: translateX(0) !important;
+}
+
 .layout,
 .content-area,
 .page-main {
@@ -104,14 +109,15 @@ textarea {
 
 .sidebar {
   background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: 24px 18px;
-  position: relative;
-  top: auto;
-  left: auto;
-  height: auto;
-  width: 100%;
-  z-index: auto;
+  border-right: 1px solid var(--border);
+  padding: 32px 24px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 260px;
+  z-index: 9999;
+  transform: translateX(-100%);
   transition: transform 0.25s ease;
 }
 
@@ -161,38 +167,20 @@ textarea {
   color: var(--text);
 }
 
-.sidebar {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: 24px 18px;
-  position: relative;
-  top: auto;
-  left: auto;
-  height: auto;
-  width: 100%;
-  z-index: auto;
-  transition: transform 0.25s ease;
-}
-
 .icon-button img {
   width: 20px;
   height: 20px;
   object-fit: contain;
   display: block;
-  pointer-events: none; /* Garante que o clique registre no botão, não na imagem */
+  pointer-events: none; /* Garante que o clique registre no botão */
   transition: transform 0.2s ease;
 }
 
-/*  
-  automaticamente a cor deles para preto quando o tema claro estiver ativo.
-
-*/
+/* automaticamente a cor deles para preto quando o tema claro estiver ativo. */
 
 body.light .icon-button img {
   filter: invert(1);
 }
-
-
 
 .icon-button:hover {
   background: rgba(255, 255, 255, 0.12);
@@ -216,12 +204,6 @@ body.light .icon-button {
   max-width: 720px;
   line-height: 1.8;
 }
-
-.page-main {
-  display: grid;
-  gap: 24px;
-}
-
 
 .card,
 .hero-card,
@@ -303,32 +285,32 @@ body.light .icon-button {
 .video {
   width: 100%;
   max-width: 760px;
-    margin: 32px auto 0;
-  }
+  margin: 32px auto 0;
+}
 
-  .video {
-    margin-bottom: 0;
-  }
+.video {
+  margin-bottom: 0;
+}
 
-  .mapa-conteudo iframe,
-  .video iframe {
-    width: 100%;
-    min-height: 360px;
-    aspect-ratio: 16 / 9;
-    border: 0;
-    border-radius: 18px;
-    transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
-    transform-origin: center center;
-  }
+.mapa-conteudo iframe,
+.video iframe {
+  width: 100%;
+  min-height: 360px;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 18px;
+  transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
+  transform-origin: center center;
+}
 
-  .mapa-conteudo iframe:hover,
-  .video iframe:hover,
-  .imgbeneficio:hover,
-  .banner-card:hover {
-    transform: scale(1.03);
-    filter: brightness(1.1);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
-  }
+.mapa-conteudo iframe:hover,
+.video iframe:hover,
+.imgbeneficio:hover,
+.banner-card:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+}
 
 .lista-beneficios .itens {
   display: flex;
@@ -386,11 +368,11 @@ body.light .icon-button {
   border-radius: 0;
   margin-bottom: 18px;
   display: block;
-  filter: brightness(0) invert(1); /* Ícones pretos -> brancos, para contrastar com o card escuro */
+  filter: brightness(0) invert(1); /* Ícones pretos -> brancos */
 }
 
 body.light .produtos li img {
-  filter: none; /* No tema claro o card é branco, então mantém o ícone preto original */
+  filter: none; /* No tema claro o card é branco, então mantém o ícone preto */
 }
 
 .produto-descricao {
@@ -399,7 +381,6 @@ body.light .produtos li img {
   font-size: 0.92rem; 
   line-height: 1.4; 
   flex-grow: 1;
-  
 }
 
 .produto-preco {
@@ -488,11 +469,13 @@ body.light .produtos li img {
   border-radius: 28px;
   overflow: hidden;
   min-height: 420px;
+  max-height: 80vh; /* nunca ultrapassa 80% da altura da tela */
 }
 
 .gallery-visual img {
   width: 100%;
   height: 100%;
+  max-height: 80vh;
   object-fit: cover;
   display: block;
 }
@@ -520,12 +503,6 @@ body.light .produtos li img {
   gap: 28px;
   padding: 32px 0;
   border-top: 1px solid rgba(255,255,255,0.06);
-}
-
-.section-header {
-  display: grid;
-  gap: 8px;
-  margin-bottom: 14px;
 }
 
 .floor-header {
@@ -564,6 +541,7 @@ body.light .produtos li img {
   background: var(--surface);
   border: 1px solid var(--border);
   min-height: 220px;
+  max-height: 75vh; /* impede que um card sozinho ocupe a tela toda */
 }
 
 .floor-large-card,
@@ -687,7 +665,6 @@ body.light .produtos li img {
   }
 }
 
-/* Override gallery layout after previous styles */
 .floor-section-layout,
 .thumbnail-row,
 .barber-top-row,
@@ -722,7 +699,6 @@ body.light .produtos li img {
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: 180px;
 }
-
 
 .form-card {
   padding: 36px;
@@ -788,37 +764,37 @@ body.light .produtos li img {
 }
 
 .footer-socials {
-    display: flex;
-    gap: 16px; /* Espaço entre cada um dos ícones */
-    margin-top: 8px;
+  display: flex;
+  gap: 16px; /* Espaço entre cada um dos ícones */
+  margin-top: 8px;
 }
 
 .footer-socials a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%; /* Mantém as formas arredondadas exigidas pelo design */
-    background-color: var(--surface-container, #112229); /* Fundo ardósia escuro */
-    color: var(--secondary-text, #c3c7ca); 
-    transition: all 0.3s ease;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%; /* Mantém as formas arredondadas exigidas pelo design */
+  background-color: var(--surface-container, #112229); /* Fundo ardósia escuro */
+  color: var(--secondary-text, #c3c7ca); 
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .footer-socials a svg {
-    width: 24px;
-    height: 24px;
+  width: 24px;
+  height: 24px;
 }
 
 .footer-socials a:hover {
-    background-color: var(--teal-accent, #44dfed); /* Destaque na cor Teal neon */
-    color: #00363b; /* Cor do ícone escurece para criar contraste com o fundo Teal */
-    transform: translateY(-4px); /* Animação de flutuação que eleva o botão */
+  background-color: var(--teal-accent, #44dfed); /* Destaque na cor Teal neon */
+  color: #00363b; /* Cor do ícone escurece para criar contraste com o fundo Teal */
+  transform: translateY(-4px); /* Animação de flutuação que eleva o botão */
 }
 
 /* ===================================================
-   ALINHAMENTO DO LINK DE AVALIAÇÃO NO FOOTER
+   ALINHAMENTO DO LINK DE AVALIAÇÃO DO FOOTER
    =================================================== */
 
 .footer-center {
@@ -908,12 +884,6 @@ body.light .lista-beneficios .itens {
   color: var(--text);
 }
 
-body.light .sidebar nav li.active a,
-body.light .sidebar nav li a:hover {
-  background: rgba(45, 144, 168, 0.12);
-  color: var(--text);
-}
-
 body.light .enviar {
   color: #04141c;
 }
@@ -932,7 +902,6 @@ body.light .footer .copy {
 }
 
 @media (min-width: 1180px) {
-  /* Desktop: fixed sidebar with content offset (restores original desktop layout) */
   .layout {
     display: block;
   }
@@ -957,7 +926,7 @@ body.light .footer .copy {
     padding: 24px 40px;
   }
 
-  /* when collapsed on desktop, hide sidebar and expand content */
+  /* quando colapsa no desktop, esconde a sidebar e expande o conteudo */
   body.sidebar-collapsed .sidebar {
     transform: translateX(-260px);
   }
@@ -996,7 +965,7 @@ body.light .footer .copy {
 
   .topbar-actions {
     position: absolute;
-    top: 15px; /* Ajuste leve para o celular */
+    top: 15px; 
     right: 15px;
     justify-content: flex-end;
   }
@@ -1053,10 +1022,6 @@ body.light .footer .copy {
 }
 
 @media (max-width: 620px) {
-  .sidebar {
-    display: none;
-  }
-
   .layout {
     display: block;
   }
@@ -1064,10 +1029,9 @@ body.light .footer .copy {
   .content-area {
     padding-top: 18px;
   }
-
 }
 
-  /* ===================================================
+/* ===================================================
    DESIGN INTEGRADO: VISUAIS NA ESQUERDA, TEXTOS NA DIREITA
    =================================================== */
 
@@ -1158,10 +1122,10 @@ body.light .footer .copy {
   margin: 0 !important;
 }
 
-/* --- Responsividade Técnica --- */
+/* --- Responsividade --- */
 @media (max-width: 992px) {
   .localizacao-grid-novo {
-    grid-template-columns: 1fr !important; /* Empilha no tablet/celular */
+    grid-template-columns: 1fr !important; /* Empilha no celular */
     gap: 36px !important;
   }
 }
@@ -1173,10 +1137,9 @@ body.light .footer .copy {
   .texto-direita .titulo-principal {
     font-size: 1.9rem !important;
   }
-
 }
 
-  /* ===================================================
+/* ===================================================
    BLOCO DE beneficios: IMAGEM E VÍDEO LADO A LADO
    =================================================== */
 
@@ -1309,4 +1272,226 @@ body.light .topbar > .topbar-actions .icon-button img {
 body.light .hero-header .icon-button img,
 .hero-header .icon-button img {
   filter: none !important; /* Mantém os ícones brancos e visíveis sobre a foto escura */
+}
+
+/* ============================
+   Newsletter no Footer
+   ============================ */
+.footer-newsletter {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-newsletter-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted, #c3c7ca);
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.footer-newsletter-form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.footer-newsletter-input {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text, #d4e5f0);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.footer-newsletter-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.footer-newsletter-input:focus {
+  border-color: var(--accent, #44dfed);
+}
+
+.footer-newsletter-btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: var(--accent, #44dfed);
+  color: #00363b;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.footer-newsletter-btn:hover {
+  opacity: 0.85;
+}
+
+/* Tema claro */
+body.light .footer-newsletter {
+  background: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.light .footer-newsletter-title {
+  color: #5c7480;
+}
+
+body.light .footer-newsletter-input {
+  background: #fff;
+  border-color: #cdd7dc;
+  color: #102a35;
+}
+
+body.light .footer-newsletter-input::placeholder {
+  color: #9ab0bb;
+}
+
+body.light .footer-newsletter-btn {
+  background: #2d90a8;
+  color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 860px) {
+  .footer-newsletter {
+    padding: 22px 16px;
+  }
+
+  .footer-newsletter-form {
+    flex-direction: column;
+  }
+
+  .footer-newsletter-btn {
+    width: 100%;
+  }
+}
+
+/* ============================
+   Seção de Depoimentos (Produtos)
+   ============================ */
+.depoimentos-section {
+  padding: 48px 32px 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.depoimentos-header {
+  margin-bottom: 28px;
+}
+
+.depoimentos-titulo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text, #d4e5f0);
+  margin-bottom: 6px;
+}
+
+.depoimentos-subtitulo {
+  font-size: 0.9rem;
+  color: var(--text-muted, #8d9194);
+}
+
+.depoimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.depoimento-card {
+  background: var(--surface, rgba(16, 34, 43, 0.92));
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.depoimento-estrelas {
+  color: #f4c84a;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+.depoimento-texto {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted, #c3c7ca);
+  flex: 1;
+}
+
+.depoimento-autor {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 12px;
+}
+
+.depoimento-nome {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text, #d4e5f0);
+}
+
+.depoimento-produto {
+  color: var(--accent, #44dfed);
+}
+
+/* Tema claro */
+body.light .depoimentos-section {
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light .depoimentos-titulo {
+  color: #102a35;
+}
+
+body.light .depoimentos-subtitulo {
+  color: #5c7480;
+}
+
+body.light .depoimento-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: #dde4e8;
+}
+
+body.light .depoimento-texto {
+  color: #4a6370;
+}
+
+body.light .depoimento-nome {
+  color: #102a35;
+}
+
+body.light .depoimento-produto {
+  color: #2d90a8;
+}
+
+body.light .depoimento-autor {
+  border-top-color: #dde4e8;
+}
+
+/* Mobile */
+@media (max-width: 860px) {
+  .depoimentos-section {
+    padding: 32px 16px;
+  }
+
+  .depoimentos-grid {
+    grid-template-columns: 1fr;
+  }
 }

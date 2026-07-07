@@ -240,7 +240,6 @@
   }
 }
 
-/* Light theme overrides to ensure readable font colors and contrasts */
 body.light .review-card {
   background: var(--surface);
   border-color: rgba(28, 53, 72, 0.06);
@@ -298,14 +297,12 @@ body.light .enviar {
   color: #04141c; /* keep button text readable on light accent */
 }
 
-/* Staff cards grid and selected states */
 .cards-grid {
   display: grid;
   gap: 18px;
   align-items: start;
 }
 
-/* Specific layout for staff choices: three columns when space allows */
 .staff-choices {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -334,13 +331,11 @@ body.light .enviar {
 body.light .card { background: var(--surface); border-color: rgba(28,53,72,0.06); }
 body.light .card.selected { box-shadow: var(--shadow); }
 
-/* Make staff-section span full width of the review grid so images sit below the paragraph */
 .staff-section {
   grid-column: 1 / -1;
   margin-top: 56px;
 }
 
-/* Add space between the section title and the card grid */
 .staff-section .section-title {
   margin-bottom: 20px;
 }
@@ -351,7 +346,6 @@ body.light .card.selected { box-shadow: var(--shadow); }
   }
 }
 
-/* Right column for lounge images and info */
 .review-body.review-grid {
   display: grid;
   grid-template-columns: 1fr 360px;
